@@ -1,6 +1,6 @@
 # Notably, Everything Changed
 
-Interactive summary of a study of how 3,815 computer science papers from ten venues (OSDI, NSDI, MLSys, VLDB, NeurIPS, ICML, CVPR, ACL, COLM, EuroSys) changed their prose after ChatGPT.
+Interactive summary of a study of how 5,885 computer science papers from ten venues (OSDI, NSDI, MLSys, VLDB, NeurIPS, ICML, CVPR, ACL, COLM, EuroSys) changed their prose after ChatGPT.
 
 Live page: https://odysa.github.io/notably-everything-changed/
 
