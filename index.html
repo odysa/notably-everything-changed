@@ -270,7 +270,7 @@ details.more > .statgrid { margin-top: 18px; }
 <section id="play" class="game wide" aria-label="Before LLMs or after GPT-4 game">
   <div class="eyebrow">A game · 5 rounds</div>
   <h2 class="game-h">Before LLMs, or after GPT-4?</h2>
-  <p class="gsub">Each round shows a short excerpt from a real ACL paper. Was it written before LLM writing tools existed (published 2016–2020), or after ChatGPT and GPT-4 (published 2025)?</p>
+  <p class="gsub">Each round shows the opening of a paragraph from a real ACL paper. You guess whether it was published in 2016–2020, before anyone had an LLM to help them write, or in 2025, after ChatGPT and GPT-4. We found it harder than it sounds.</p>
   <div class="gcard" id="g-card">
     <div class="gtop"><span id="g-round"></span><span class="pips" id="g-pips" aria-hidden="true"></span><span id="g-score"></span></div>
     <p class="gpara" id="g-text"></p>
@@ -280,19 +280,19 @@ details.more > .statgrid { margin-top: 18px; }
     </div>
     <div class="greveal" id="g-reveal" aria-live="polite" hidden></div>
   </div>
-  <p class="tiny muted ui">Excerpts are the opening sentences of paragraphs from ACL Anthology papers (ACL 2016, 2020 and 2025), licensed CC BY 4.0. We corrected PDF-extraction errors and removed run-in headings. Each source is shown after you answer. Nothing here is a claim about how any paper was written.</p>
+  <p class="tiny muted ui">Excerpts are the opening sentences of paragraphs from ACL Anthology papers (ACL 2016, 2020 and 2025), licensed CC BY 4.0. After you answer we show the source. We corrected PDF-extraction errors and removed run-in headings, but otherwise the words are the authors' own, and nothing here is a claim about how any paper was written.</p>
 </section>
 
 <header class="hero wide">
   <div class="eyebrow">5,885 papers · 10 CS venues · 2016–2026</div>
   <h1 class="hero-h"><span class="mark">Notably,</span> <em>everything</em> changed.</h1>
-  <p class="sub">We analyzed the full text of 5,885 computer science papers from before LLMs and after GPT-4.</p>
+  <p class="sub">We read the full text of 5,885 computer science papers, by script rather than by hand, and compared how they were written before LLMs existed with how they are written now.</p>
   <div class="tldr">
     <div class="eyebrow">In short</div>
     <ul>
-      <li>Since 2024, CS papers use longer, more formal words and comment on their own results in the same sentence (“…, highlighting its crucial role”).</li>
-      <li>It happened in every field we checked, including papers that have nothing to do with LLMs, and it was not already happening before 2021.</li>
-      <li>Sentence length, paper structure and the strength of claims barely changed. The wording did.</li>
+      <li>Since 2024, CS papers use longer and more formal words, and they tend to tell the reader what a result means in the same sentence that reports it (“…, highlighting its crucial role”).</li>
+      <li>We see this in all eight venues we checked, including papers that have nothing to do with LLMs. Between 2016 and 2020 the same measures barely moved, so this is not an old trend speeding up.</li>
+      <li>Sentence length, the structure of papers and what they claim stayed about the same. What changed is the wording.</li>
     </ul>
   </div>
   <div class="rewrite" aria-live="polite">
@@ -303,7 +303,7 @@ details.more > .statgrid { margin-top: 18px; }
       </span>
     </div>
     <div class="txt" id="rw-txt"></div>
-    <div class="tiny muted ui">An illustration we wrote. Each change in it is a pattern we measured.</div>
+    <div class="tiny muted ui">We wrote this example ourselves; every edit in it corresponds to a pattern we measured in the corpus.</div>
   </div>
   <div class="facts">
     <div class="fact"><b>5,885</b><span>full papers analyzed, 33.5 million words of body text from 10 venues</span></div>
@@ -318,11 +318,11 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Context</div>
     <h2>When the tools arrived</h2>
-    <p class="lede">The baseline papers were written before LLM writing tools existed; the comparison papers after ChatGPT and GPT-4.</p>
+    <p class="lede">Our baseline papers were written before any LLM writing tool existed, and our comparison papers after ChatGPT and GPT-4 were in everyone's browser.</p>
   </div>
   <figure>
     <div class="chart-scroll"><svg id="tl-chart" class="chart" viewBox="0 0 900 250" role="img" aria-label="Timeline of LLM releases and sample years"></svg></div>
-    <figcaption>Bands are the publication years we sampled. Papers appear months after they are written, so 2024 is the first year written entirely after GPT-4.</figcaption>
+    <figcaption>The bands mark the publication years we sampled, and because a paper appears several months after it is written, 2024 is the first year whose papers were all written after GPT-4.</figcaption>
   </figure>
 </section>
 
@@ -330,7 +330,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">What changed</div>
     <h2>Six ways the writing changed</h2>
-    <p class="lede">Measured across venues and confirmed in papers that are not about LLMs. Example pairs are illustrations we wrote; the numbers are from the corpus.</p>
+    <p class="lede">Each of these holds across venues and in papers that are not about LLMs. The example pairs are ones we wrote to make the pattern easy to see; the numbers come from the papers.</p>
   </div>
   <div class="shifts" id="shift-list"></div>
 </section>
@@ -339,7 +339,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">The evidence</div>
     <h2>Flat for years, then a jump in 2024</h2>
-    <p class="lede">Each line is a venue, the bold line their average. Pick a measure; most stay flat until 2023 and jump in 2024.</p>
+    <p class="lede">Each thin line is one venue and the bold line is their average. If you pick a measure, you will see that most of them stay flat until 2023 and then jump in 2024.</p>
   </div>
   <figure>
     <div class="controls">
@@ -358,7 +358,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">The synonym ladder</div>
     <h2>Important became crucial</h2>
-    <p class="lede">For each pair, how often papers pick the fancier word.</p>
+    <p class="lede">For each pair of words, the chart shows how often papers choose the formal one over the plain one.</p>
   </div>
   <figure>
     <div class="controls">
@@ -376,7 +376,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Words in, words out</div>
     <h2>The casual verbs of 2020 are disappearing</h2>
-    <p class="lede">Share of papers using each term. Rising terms are ones that rose in every venue, including papers not about LLMs.</p>
+    <p class="lede">The bars show the share of papers that use each term at least once. We list a rising term only if it rose in every venue, including in papers that are not about LLMs.</p>
   </div>
   <div class="legend"><span><i style="background:var(--pre)"></i>2019–20</span><span><i style="background:var(--post)"></i>2024–26</span></div>
   <div class="words">
@@ -385,16 +385,16 @@ details.more > .statgrid { margin-top: 18px; }
   </div>
   <figure>
     <h3>Topic words, for contrast</h3>
-    <p class="small muted ui">These rise far less in papers not about LLMs. They track what papers are about, not how they are written.</p>
+    <p class="small muted ui">These words rise far less in papers that are not about LLMs, which tells us they reflect the topic of a paper rather than its style.</p>
     <div class="chips" id="w-topic"></div>
-    <p class="small muted ui">The famous ChatGPT words from biomedical abstracts barely reached CS: “delve” is in about 4% of 2024–26 papers, “tapestry” and “testament” stay at noise level.</p>
+    <p class="small muted ui">The words that became famous as signs of ChatGPT in biomedical abstracts mostly did not reach CS. “Delve” appears in about 4% of 2024–26 papers, and “tapestry” and “testament” are as rare as they were in 2020.</p>
   </figure>
 </section>
 
 <section id="meter" class="col">
   <div class="eyebrow">Try it</div>
   <h2>Score your own writing</h2>
-  <p class="lede">Paste 150+ words to see whether they read more like 2020 or 2025 papers. It runs in your browser; nothing is sent anywhere.</p>
+  <p class="lede">Paste at least 150 words and we will tell you whether they read more like a 2020 paper or a 2025 paper. The scoring runs in your browser, so your text is not sent anywhere.</p>
   <textarea id="m-in" aria-label="Text to score"></textarea>
   <div class="controls"><button class="btn" id="m-go">Score this text</button><button class="btn ghost" id="m-sample">Load a 2025-style sample</button><button class="btn ghost" id="m-sample0">Load a 2020-style sample</button></div>
   <div class="meter-out" id="m-out"></div>
@@ -405,7 +405,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Statistics</div>
     <h2>How sure are we?</h2>
-    <p class="lede">The four checks that matter most. More are one click away; terms are in the glossary.</p>
+    <p class="lede">These are the four checks we would want to see first as reviewers. The others are one click away, and the glossary at the bottom explains the terms.</p>
   </div>
   <div class="statgrid" id="statgrid"></div>
   <details class="more"><summary>Show all statistical checks</summary><div class="statgrid" id="statgrid-more"></div></details>
@@ -415,7 +415,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Every venue</div>
     <h2>NLP, vision and ICML moved most; systems, databases and NeurIPS least</h2>
-    <p class="lede">Pick a venue. <a class="gterm" href="#g-auc">AUC</a> 0.5 means no change; higher means 2024–26 papers score higher.</p>
+    <p class="lede">Pick a venue to see its numbers; an <a class="gterm" href="#g-auc">AUC</a> of 0.5 means no change, and higher values mean that 2024–26 papers score higher than 2019–20 papers.</p>
   </div>
   <div class="vtabs" id="vtabs" role="group" aria-label="Venue"></div>
   <figure>
@@ -429,7 +429,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">What stayed</div>
     <h2>The popular AI tells mostly did not move</h2>
-    <p class="lede">Several popular “AI tells” barely moved, and some changes come from venue rules instead.</p>
+    <p class="lede">Several of the most quoted “AI tells” barely moved in CS papers. Some changes that did happen have a simpler explanation, such as a new venue rule.</p>
   </div>
   <div class="unchanged" id="unch"></div>
 </section>
@@ -440,13 +440,13 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">What we analyzed</div>
     <h2>5,885 papers, analyzed in full</h2>
-    <p class="lede">Not abstracts: the full body text of every paper, with references, captions, tables and appendices removed. Every number on this page comes from these papers.</p>
+    <p class="lede">We analyzed the full body text of every paper after removing references, captions, tables and appendices, and every number on this page comes from these papers.</p>
   </div>
   <div class="cbig" id="cbig"></div>
   <figure>
     <div class="tbl"><table class="cmat" id="cmat"></table></div>
     <div class="legend"><span><i style="background:color-mix(in srgb, var(--pre) 10%, transparent);height:12px"></i>2016 and 2018 trend controls</span><span><i style="background:color-mix(in srgb, var(--pre) 22%, transparent);height:12px"></i>pre-LLM baseline (2019–20)</span><span><i style="background:color-mix(in srgb, var(--ink-3) 16%, transparent);height:12px"></i>transition years (2021–23)</span><span><i style="background:color-mix(in srgb, var(--post) 26%, transparent);height:12px"></i>post-GPT-4 (2024–26)</span></div>
-    <figcaption>Papers per venue and year. OSDI, NSDI and MLSys are full proceedings; other venues are random samples of 80–200 papers. COLM and EuroSys have no pre-LLM year and use arXiv versions, so they are shown but left out of pooled statistics.</figcaption>
+    <figcaption>The table counts papers per venue and year. OSDI, NSDI and MLSys are full proceedings; other venues are random samples of 80–200 papers. COLM and EuroSys have no pre-LLM year and use arXiv versions, so they are shown but left out of pooled statistics.</figcaption>
   </figure>
 </details>
 
@@ -454,10 +454,10 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="eyebrow">Method</div>
   <h2>How this was measured</h2>
   <div style="display:grid;gap:14px" class="small">
-    <p><b>Corpus.</b> OSDI, NSDI, MLSys, VLDB, NeurIPS, ICML, CVPR and ACL, each with a 2019–20 baseline and a 2024–26 sample (full proceedings for USENIX venues and MLSys; random samples of 80–200 otherwise). Six venues also have a 2016 control. ACL and ICML have 80 random papers for every year from 2021 to 2024. COLM (founded 2024) and EuroSys (ACM DL blocks scripts) use arXiv versions and are reported separately. NeurIPS uses 2024 because the 2025 main track was not yet posted.</p>
-    <p><b>Text.</b> Body prose only: references, captions, headers, appendices and paragraphs under 40 words are dropped. Comparisons stay within a venue, so template differences mostly cancel. Limitations, ethics and impact sections are left out of style counts because venue rules made them mandatory in the later years.</p>
-    <p><b>Attribution.</b> A change counts as LLM-era only when it did not happen between 2016 and 2020, breaks after 2022 in the yearly series, and holds in papers that are not about LLMs. Structure changes such as Limitations sections, longer PDFs and more references trace to venue rules and older trends instead.</p>
-    <p><b>Caveats.</b> This measures a shift in style, timed with LLMs. It cannot show that any individual paper was written with AI, and nothing here is a claim about a specific paper. Imitation, editing tools and changes in who writes CS papers could all contribute.</p>
+    <p><b>Corpus.</b> We use eight venues (OSDI, NSDI, MLSys, VLDB, NeurIPS, ICML, CVPR and ACL). Each has a 2019–20 baseline, a sample for every year from 2021 to 2024, and a 2024–26 comparison sample, and all but MLSys also have 2016 and 2018 samples to measure the trend before LLMs. For USENIX venues and MLSys we use the full proceedings; for the others we draw random samples of 80–200 papers per year. COLM, founded in 2024, and EuroSys, whose PDFs we could not download in bulk, use arXiv versions and are reported separately. NeurIPS stops at 2024 because the 2025 proceedings were not yet posted.</p>
+    <p><b>Text.</b> We keep only body prose and drop references, captions, headers, appendices and paragraphs under 40 words. Because we always compare a venue with itself, differences between templates mostly cancel. We also leave Limitations, ethics and impact sections out of the style counts, because venue rules made them mandatory in the later years.</p>
+    <p><b>Attribution.</b> We call a change LLM-era only if it did not happen between 2016 and 2020, if it jumps after 2022 in the yearly samples, and if it also appears in papers that are not about LLMs. Changes to the structure of papers, such as Limitations sections, longer PDFs and more references, fail these tests and trace back to venue rules and older trends.</p>
+    <p><b>Caveats.</b> What we measure is a change in style whose timing matches the arrival of LLMs. We cannot tell whether any particular paper was written with an LLM, and nothing on this page is a claim about a specific paper. Authors imitating each other, grammar tools, and changes in who writes CS papers could all contribute to the shift.</p>
   </div>
 </details>
 
@@ -533,7 +533,7 @@ drawTimeline();
 const SER_ORDER = ["classifier", "markers", "ing_interp_core_1k", "ing_func_1k", "op_additionally_1k", "op_notably_1k", "style_lex_1k",
   "boost_1k", "hedge_1k", "we_1k", "pct_long_words", "flesch", "passive_per_100s", "contrib_introduce_share", "emdash_1k", "sent_len", "llm_1k"];
 const CAPS = {
-  classifier: "A logistic model trained only on 33 style features (no topic words). 2016 and 2021–24 were never seen in training. Slow drift of about 4 points a year, then a 40-point jump in 2024.",
+  classifier: "A logistic model trained only on 33 style features, with no topic words, that never saw 2016, 2018 or 2021–24 during training. The share drifts up by a few points a year until 2023 and then jumps by about 30 points in 2024.",
   markers: "Papers using at least three of 16 marker words. The markers were chosen on the main corpora, so 2021–24 are out of sample. ACL 2023 shows the first rise: camera-ready versions were due in spring 2023, after GPT-4.",
   ing_interp_core_1k: "“…, highlighting the robustness of …”. Flat at about 0.02 per 1k words until 2023, then ×8. Changepoint: 2024 in 73% of bootstrap runs, 2025 in the rest, never earlier.",
   ing_func_1k: "“…, enabling rapid adaptation …”. The single strongest separator of the eras (pooled AUC 0.87) and still rising in 2025.",
@@ -604,27 +604,27 @@ drawSeries("classifier");
 /* ---------- shifts ---------- */
 const SHIFTS = [
   ["From reporting to interpreting", "interpretive riders ~9× · functional riders ~3.7×",
-   "Results now arrive with their meaning attached in the same sentence: “…, highlighting …”, “…, underscoring …”, “…, paving the way for …”.",
+   "A 2020 paper usually reported a result and moved on, leaving the reader or the discussion section to say what it meant. Today the meaning tends to arrive in the same sentence, as a clause like “…, highlighting …” or “…, paving the way for …”.",
    ["2020 style", "Accuracy drops by 6% without the cache. The cache matters most for long inputs."],
    ["2025 style", "Accuracy drops by 6% without the cache, highlighting its crucial role for long inputs."]],
   ["From plain to elevated words", "important → crucial/critical: 41% → 71% of uses",
-   "“deal with”, “look at”, “keep track of”, “is useful” fell by about two-thirds. “address”, “align with”, “overlook”, “facilitate” rose.",
+   "Everyday phrasings such as “deal with”, “look at” and “is useful” appear in about a third as many papers as in 2020. Their formal counterparts (“address”, “align with”, “overlook”, “facilitate”) took their place, and they did so in papers on every topic.",
    ["2020 style", "Our method deals with missing values and is useful when labels are scarce."],
    ["2025 style", "Our method addresses missing values and facilitates learning when labels are scarce."]],
   ["Louder, less personal", "boosters per hedge 0.27 → 0.51 · “we” and passive voice both down",
-   "More “significantly”, fewer “may” and “likely”, and the method rather than the authors becomes the subject: “This design ensures …”. Claims of being first did not grow.",
+   "Papers use more words like “significantly” and fewer like “may” or “likely”. They also say “we” less, and the method becomes the subject of the sentence (“This design ensures …”). Interestingly, claims of being the first to do something did not become more common.",
    ["2020 style", "We find that the gain may come from better initialization."],
    ["2025 style", "The gain stems from better initialization, significantly improving stability."]],
   ["Signposted blocks", "“Additionally,” ~3.7× · “Notably,” ~8.5×",
-   "Shorter paragraphs, more run-in labels, and connectives that announce each block. “Moreover” and “Thus” stayed flat.",
+   "Paragraphs got shorter, and more of them start with a label or with a word that announces their role. “Additionally” and “Notably” account for most of this; older connectives such as “Moreover” and “Thus” are used about as often as before.",
    ["2020 style", "We also tried a larger batch size."],
    ["2025 style", "Additionally, we evaluate a larger batch size."]],
   ["Harder to read", "Flesch reading ease 36.5 → 27.8",
-   "Longer, more Latinate words: 3+ syllable words went from 21% to 25%, and nouns made from verbs (utilization, enhancement) rose 15%. Sentence length did not change; word length did.",
+   "Sentences are no longer than before, but the words in them are. One word in four now has three or more syllables, up from one in five, and nouns made from verbs (utilization, enhancement) are 15% more common.",
    ["2020 style", "We want to know how long a model stays useful."],
    ["2025 style", "We investigate the temporal robustness of model utility."]],
   ["The contribution gets packaged", "“we propose X, a …”: 7% → 24% of papers",
-   "“introduce” grew while “propose” stayed flat, named systems get a one-line pitch, and “extensive experiments” went from 19% to 42% of papers.",
+   "Authors increasingly “introduce” a system instead of proposing it, and they follow its name with a one-line pitch. The phrase “extensive experiments” now appears in 42% of papers, up from 19%.",
    ["2020 style", "We build Ferry, which batches requests by expected length."],
    ["2025 style", "We introduce Ferry, a novel framework that seamlessly integrates length-aware batching."]]
 ];
@@ -698,7 +698,7 @@ function showVenue(v) {
       <td><span class="aucbar"><span style="left:${left}%;width:${width}%;background:${col}"></span></span> <span class="mono tiny">${a.toFixed(2)}</span></td></tr>`;
   });
   $("#vtable").innerHTML = h + "</tbody>";
-  $("#vcap").textContent = "Grey bars: structure and rhythm features that track venue rules or did not change. Venues without a 2016 sample show a dash.";
+  $("#vcap").textContent = "Grey bars mark structure and rhythm features, which follow venue rules or did not change, and venues without a 2016 sample show a dash in that column.";
 }
 VORDER.forEach((v) => { const b = document.createElement("button"); b.textContent = v; b.onclick = () => showVenue(v); vt.appendChild(b); });
 showVenue("ACL");
@@ -785,14 +785,14 @@ $("#m-in").value = SAMPLE1; score_text();
 
 /* ---------- unchanged ---------- */
 const U = [
-  ["Sentence length", "21.9 → 21.7 words. AUC 0.48, no break year."],
-  ["Sentence-length variability", "Down about 0.2 SD after trend adjustment. Real, but far smaller than the rider shift."],
-  ["“not only … but also”", "0.13 → 0.15 per 1k. No break year."],
+  ["Sentence length", "21.9 → 21.7 words on average, with an AUC of 0.48 and no break year."],
+  ["Sentence-length variability", "Down about 0.2 SD after trend adjustment, which is real but far smaller than the rider shift."],
+  ["“not only … but also”", "0.13 → 0.15 per 1,000 words, with no break year."],
   ["“X, Y, and Z” lists of three", "Small rise that disappears after removing the pre-LLM trend."],
-  ["Claims of being first", "“first”, “to our knowledge” flat or slightly down. “State of the art” flat."],
+  ["Claims of being first", "“first” and “to our knowledge” are flat or slightly down, and so is “state of the art”."],
   ["“delve”, “tapestry”, “testament”", "The biomedical ChatGPT words stay rare in CS (“delve” in about 4% of papers)."],
   ["Paper skeleton", "Section count, intro, related-work and conclusion length: unchanged."],
-  ["Limitations sections", "ACL 1% → 66% in 2023, the year they became mandatory. A venue rule."],
+  ["Limitations sections", "ACL went from 1% to 66% of papers in 2023, the year a venue rule made them mandatory."],
   ["Longer PDFs, more references", "Appendices bundled into proceedings PDFs; references were already rising 2016 → 2020."],
   ["arXiv citations", "Rising since 2016 and driven by LLM papers citing preprints."],
 ];
@@ -826,21 +826,21 @@ const F = D.fdr, si = cp.style_index, siEarly = si.boot_p2021 + si.boot_p2022 + 
 const didSI = did.style_index;
 $("#statgrid").innerHTML = [
   fig("A · Survives multiple testing", `<div class="big">${F.sig} / ${F.tests}</div><p class="small">venue × measure tests significant after false-discovery-rate correction (q < 0.05); ${F.all_venues} measures are significant in every venue.</p>`,
-    "Mann-Whitney tests per venue with Benjamini-Hochberg correction; pooled AUCs with venue-stratified bootstrap intervals.", `We ran ${F.tests} separate comparisons. After correcting for the flukes expected from testing that many, ${F.sig} remain clear, and ${F.all_venues} measures changed clearly in every single venue.`),
+    "Mann-Whitney tests per venue with Benjamini-Hochberg correction; pooled AUCs with venue-stratified bootstrap intervals.", `We ran ${F.tests} separate comparisons. Testing that many things produces some false alarms, so we corrected for them; ${F.sig} comparisons survive the correction, and ${F.all_venues} measures changed in every venue.`),
   fig("B · Beyond each venue's own trend", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Jump (SD)</th><th>SE</th><th>p</th></tr></thead><tbody>${didRows}</tbody></table></div>`,
-    "Difference-in-differences on all eight venues: y ~ venue + venue × year + post, fitted on pre-ChatGPT years (2016–2022) and 2024 on; 2023 left out as mixed. Standard errors are clustered by venue-year.", `Each venue was already drifting slowly before LLMs. These are the jumps beyond that drift, in units of the 2020 paper-to-paper spread. The style index landed ${didSI.excess_jump_sd.toFixed(1)} spreads above where the old trend pointed. Sentence length barely moved.`),
+    "Difference-in-differences on all eight venues: y ~ venue + venue × year + post, fitted on pre-ChatGPT years (2016–2022) and 2024 on; 2023 left out as mixed, with standard errors clustered by venue-year.", `Each venue was already drifting slowly before LLMs, so we fit that drift and measure how far the recent papers land above it. We express the jump in units of how much papers differed from each other in 2020. The style index landed ${didSI.excess_jump_sd.toFixed(1)} spreads above where the old trend pointed, while sentence length barely moved.`),
   fig("C · When did it start?", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Best year</th><th>ΔBIC vs trend</th><th>P(≤2023)</th></tr></thead><tbody>${cpRows}</tbody></table></div>`,
-    "Step-plus-trend models on venue-year averages (all eight venues, 2016–2025). ΔBIC above 10 is very strong evidence. P(≤2023) is the share of 200 bootstrap runs that place the step in 2021, 2022 or 2023.", `We asked the data which year the jump starts. For the style index the answer is ${si.best_tau}${siEarly === 0 ? ", and no bootstrap run picks an earlier year" : ` (${pct(siEarly)} of runs pick 2021–23)`}. A smooth drift fits far worse.`),
+    "Step-plus-trend models on venue-year averages (all eight venues, 2016–2025). ΔBIC above 10 is very strong evidence. P(≤2023) is the share of 200 bootstrap runs that place the step in 2021, 2022 or 2023.", `We asked the data which year the jump starts. For the style index the answer is ${si.best_tau}${siEarly === 0 ? ", and no bootstrap run picks an earlier year" : ` (${pct(siEarly)} of runs pick 2021–23)`}. A model with a smooth drift and no jump fits the data much worse.`),
   fig("D · A classifier that crosses fields", `<div class="big">${cls.cv_auc.toFixed(2)}</div><p class="small">cross-validated AUC from 33 style measures. Trained on seven venues, tested on the eighth:</p><div class="tbl"><table><tbody>${lovo}</tbody></table></div>`,
     "Without the two word lists (sentence structure and stance only) the AUC is " + D.classifier[1].cv_auc.toFixed(2) + ".", `Shown one random 2020 paper and one random 2024–26 paper, a model that looks only at style ranks the newer one higher ${Math.round(cls.cv_auc * 100)}% of the time, even for a field it never trained on.`),
   fig("E · Placebo years", `<div class="tbl"><table><thead><tr><th>Year</th><th>Above the 2020 top 5%</th><th></th></tr></thead><tbody>${tailRows}</tbody></table></div>`,
-    "Share of papers whose style index exceeds the 95th percentile of the same venue's 2019–20 papers, averaged over venues. With no change it would be about 5%.", "Before GPT-4 the share stays near what chance predicts. From 2024 it jumps to about half or more of all papers."),
+    "Share of papers whose style index exceeds the 95th percentile of the same venue's 2019–20 papers, averaged over venues; with no change it would stay near 5%.", "Before GPT-4 the share stays close to the 5% that chance predicts. In 2024 it rises to about 40%, and in 2025 to about 60%."),
   fig("F · The markers became correlated", `<div class="tbl"><table><thead><tr><th>Era</th><th>Mean correlation</th><th>First component</th></tr></thead><tbody>${co.map((r) => `<tr><td>${r.era === "pre" ? "2019–20" : r.era === "post" ? "2024–26" : r.era}</td><td>${r.mean_pairwise_rho.toFixed(3)} [${r.ci_lo.toFixed(3)}, ${r.ci_hi.toFixed(3)}]</td><td>${pct(r.pc1_share)}</td></tr>`).join("")}</tbody></table></div>`,
-    "Venue-demeaned rank correlations among 11 markers, which count disjoint sets of words.", "Before LLMs, a paper that used many riders was no more likely to say “Notably”. Now the markers tend to come together, consistent with a shared driver. Correlation alone does not prove one."),
+    "Venue-demeaned rank correlations among 11 markers, which count disjoint sets of words.", "Before LLMs, a paper that used many riders was no more likely than any other to say “Notably”. Today the markers tend to appear together, which is what we would expect if they had a shared cause, although correlation alone cannot prove one."),
   fig("G · Era or field?", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Era</th><th>Venue</th><th>LLM topic</th></tr></thead><tbody>${varRows}</tbody></table></div>`,
-    "Share of paper-to-paper variance explained, from a type-II ANOVA on raw measures of 2019–20 and 2024–26 papers.", "For the new constructions, when a paper was written explains more than where it was published. Long-standing habits such as how often authors say “we” and how long their sentences are still depend on the field."),
+    "Share of paper-to-paper variance explained, from a type-II ANOVA on raw measures of 2019–20 and 2024–26 papers.", "For the new constructions, the year a paper was written tells us more than the venue it appeared in. Older habits, such as how often authors say “we” and how long their sentences are, still depend mostly on the field."),
   fig("H · Densest in the framing", `<div class="tbl"><table><thead><tr><th>Section</th><th>Interpretive riders /1k</th><th>Change</th></tr></thead><tbody>${secRows}</tbody></table></div>`,
-    "Rates per section. Limitations, ethics and impact sections are excluded from all other style measures.", "The new constructions are thickest in the parts of a paper that summarize and frame, and thinner in the technical core."),
+    "Rates are per 1,000 words within each section; everywhere else on this page, Limitations, ethics and impact sections are excluded from the style measures.", "The new constructions are most common in the abstract, the conclusion and the Limitations section, which summarize the work, and less common in the technical core."),
 ].join("");
 
 
@@ -933,25 +933,24 @@ $("#statgrid").innerHTML = [
 const GL = [
   ["pre-LLM, post-GPT-4", "pre", "Pre-LLM papers were published in 2019–2020, before LLM writing tools existed (GPT-3 was announced in mid-2020 but was only a waitlisted API; ChatGPT came in November 2022). Post-GPT-4 papers were published in 2024–2026, the first cohorts written entirely after ChatGPT (Nov 2022) and GPT-4 (Mar 2023). The 2016 papers are an extra control, and 2021–23 are transition years."],
   ["LLM-centred / non-LLM paper", "llm", "A paper is LLM-centred if it mentions large language models (LLM, GPT, ChatGPT, Llama…) five or more times. Comparing only non-LLM papers tells us whether a change is about how people write or just about what they write about."],
-  ["Per 1k words", "per1k", "How often something occurs per 1,000 words of body text. It makes long and short papers comparable."],
+  ["Per 1k words", "per1k", "How often something occurs per 1,000 words of body text, which makes long and short papers comparable."],
   ["Interpretive rider", "rider", "A clause tacked onto the end of a sentence that tells the reader what a result means: “…, highlighting the importance of X”, “…, underscoring …”, “…, paving the way for …”."],
   ["Functional rider", "frider", "A clause tacked onto the end of a sentence that states a consequence: “…, enabling fast lookups”, “…, ensuring correctness”, “…, allowing us to …”."],
-  ["Booster / hedge", "boost", "Boosters make a claim stronger (significantly, substantially, remarkably). Hedges make it more careful (may, might, likely, perhaps)."],
-  ["Style words", "stylew", "A fixed list of words that earlier work linked to AI-polished prose: crucial, pivotal, seamless, enhance, leverage, robust, comprehensive, underscore, and similar. Fixed before this study looked at the data."],
+  ["Booster / hedge", "boost", "Boosters make a claim sound stronger (significantly, substantially, remarkably), and hedges make it more careful (may, might, likely, perhaps)."],
+  ["Style words", "stylew", "A fixed list of words that earlier work linked to AI-polished prose: crucial, pivotal, seamless, enhance, leverage, robust, comprehensive, underscore, and similar. We fixed the list before looking at this data."],
   ["Style index", "index", "One number per paper: the average of nine markers (riders, boosters, “Additionally”, “Notably”, style words…), each measured relative to the same venue's 2019–20 papers. 0 is a typical pre-LLM paper; +1 is one standard deviation more of the new style."],
-  ["Standard deviation (SD)", "sd", "How spread out a measure normally is. “+2.6 SD” means the average post-GPT-4 paper moved by 2.6 times the usual paper-to-paper variation of 2019–20, which is a very large shift."],
-  ["AUC", "auc", "The chance that a randomly picked post-GPT-4 paper scores higher than a randomly picked pre-LLM paper. 0.5 means no difference (a coin flip). 0.7 is a large difference. 1.0 would mean every post-GPT-4 paper scores higher."],
-  ["Placebo test", "placebo", "Running the same test on a period when the cause could not have acted. Here: 2016 vs 2020, before any LLM writing tool. If the method found big “changes” there too, it would be measuring something else."],
-  ["Difference-in-differences (trend-adjusted jump)", "did", "Each venue was already drifting a little before LLMs. We fit that drift from 2016 → 2020 and ask how far 2024–26 lands above where the drift alone would have taken it."],
+  ["Standard deviation (SD)", "sd", "How spread out a measure normally is across papers. For example, “+1.8 SD” means that the average post-GPT-4 paper moved by 1.8 times the usual paper-to-paper variation of 2019–20, which is a very large shift."],
+  ["AUC", "auc", "The chance that a randomly picked post-GPT-4 paper scores higher than a randomly picked pre-LLM paper. A value of 0.5 means no difference (a coin flip), 0.7 is already a large difference, and 1.0 would mean every post-GPT-4 paper scores higher."],
+  ["Placebo test", "placebo", "Running the same test on a period when the cause could not have acted. Here we compare 2016 with 2020, before any LLM writing tool existed; if the method found big “changes” there too, it would be measuring something else."],
+  ["Difference-in-differences (trend-adjusted jump)", "did", "Because each venue was already drifting a little before LLMs, we fit that drift on the years up to 2022 and ask how far 2024–26 lands above where the drift alone would have taken it."],
   ["Changepoint and BIC", "bic", "A changepoint model asks which year a sudden step begins. BIC scores how well a model fits while penalizing extra parts. A BIC difference above 10 counts as very strong evidence for one model over another."],
   ["Bootstrap", "boot", "Re-running an analysis hundreds of times on random resamples of the papers, to see how much the answer could wobble by chance. A 95% interval from it is the range the answer stays in 95% of the time."],
   ["p-value, FDR and q-value", "fdr", "A p-value is how surprising a result would be if nothing had changed. Testing many things at once produces some flukes, so the false discovery rate (FDR) correction raises the bar; the corrected value is the q-value. q < 0.05 means at most about 5% of the reported findings are expected to be flukes."],
   ["Permutation test", "perm", "Shuffle the labels (which papers are pre and which are post) and redo the analysis many times. If the real result beats every shuffled one, it is very unlikely to be luck."],
   ["Classifier, leave-one-venue-out", "clf", "A simple model that learns to tell pre-LLM from post-GPT-4 papers from style features only. Leave-one-venue-out means it is trained on seven venues and tested on the eighth, which it has never seen."],
-  ["Mixture model", "mix", "Treats the post-GPT-4 papers as a blend of papers that still look like 2020 and papers that do not, and estimates the share of each."],
   ["Quantile regression", "quant", "Asks how far each part of the distribution moved: the least-changed 10% of papers, the median paper, and the most-changed 10%."],
-  ["Equivalence test (TOST)", "tost", "The reverse of a normal test: it checks whether a change is small enough to call “no change”. Here, small enough means within ±0.2 SD."],
-  ["Dose-response", "dose", "Whether more exposure gives more effect. Here: do papers that discuss LLMs more also show more of the new style?"],
+  ["Equivalence test (TOST)", "tost", "The reverse of a normal test: it checks whether a change is small enough to call “no change”, which here means within ±0.2 SD."],
+  ["Dose-response", "dose", "Whether more exposure gives more effect; here, whether papers that discuss LLMs more also show more of the new style."],
   ["Co-adoption (correlation)", "coad", "Whether papers that use one marker more also use the others more. A shared driver, such as the same tool rewriting text, would make markers move together; separate fashions would not."],
   ["Variance explained", "var", "How much of the paper-to-paper differences can be traced to each factor: when the paper was written (era), where it was published (venue), or what it is about (LLM topic)."],
   ["Register", "reg", "The overall level and tone of language: plain and conversational, or formal and elevated."],
@@ -960,9 +959,9 @@ const GL = [
   ["Out of sample", "oos", "Tested on papers the method never saw while it was being built, so the result cannot be tuned to them."],
   ["Principal component", "pc", "A single combined direction that captures the largest share of how a set of measures vary together."],
   ["Logistic regression", "logit", "A standard statistical model that predicts a yes/no label (here: pre-LLM or post-GPT-4) from several measures."],
-  ["Flesch reading ease", "flesch", "A readability score from sentence length and syllables per word. Higher is easier. 60–70 is plain English; 30–50 is academic; below 30 is very hard."],
-  ["MATTR (lexical diversity)", "mattr", "The share of distinct words in a sliding 500-word window. Higher means a wider vocabulary."],
-  ["Nominalization", "nom", "A verb or adjective turned into a noun: “utilization”, “enhancement”, “robustness”. Heavy use makes prose more abstract."],
+  ["Flesch reading ease", "flesch", "A readability score computed from sentence length and syllables per word, where higher is easier: 60–70 is plain English, 30–50 is typical academic prose, and below 30 is very hard."],
+  ["MATTR (lexical diversity)", "mattr", "The share of distinct words in a sliding 500-word window, where higher means a wider vocabulary."],
+  ["Nominalization", "nom", "A verb or adjective turned into a noun, such as “utilization”, “enhancement” or “robustness”, which makes prose more abstract when used heavily."],
   ["Excess vocabulary", "excess", "How much more often marker words appear than the pre-LLM baseline predicts. It gives a rough lower bound on how many papers changed their wording."],
   ["Topic word vs style word", "topic", "Topic words rise because papers are about new things (LLM, prompt, Llama). Style words rise even in papers about other things, so they reflect how papers are written."],
 ];
@@ -991,21 +990,21 @@ $("#gloss").innerHTML = GL.map(([t, id, d]) => `<div id="g-${id}"><dt>${t}</dt><
   const lvRows = Object.entries(lv.per_venue).sort((a, b) => b[1] - a[1]).map(([v, a]) => `<tr><td>${v}</td><td>${a.toFixed(2)}</td></tr>`).join("");
   const html = [
     card("I · Placebo: 2016 vs 2020", `<div class="tbl"><table><thead><tr><th>Measure</th><th>${g("placebo", "Placebo")} ${g("auc", "AUC")}</th><th>Real AUC</th></tr></thead><tbody>${plRows}</tbody></table></div>`,
-      `Between 2016 and 2020, when no LLM writing tool existed, the same tests find almost nothing (AUC near 0.5, a coin flip). Between 2020 and 2024–26 they find large changes. So the method is not just picking up normal year-to-year drift.`),
+      `Between 2016 and 2020, when no LLM writing tool existed, the same tests find almost nothing (AUC near 0.5, a coin flip), while between 2020 and 2024–26 they find large changes. The method therefore does not simply pick up the slow drift that every field has from year to year.`),
     card("J · Holding paper length, format and topic fixed", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Raw shift</th><th>With controls</th><th>Zero-LLM papers</th></tr></thead><tbody>${ctRows}</tbody></table></div>`,
-      `Shifts in ${g("sd", "SD")} units. Even after accounting for word count, page count, number of references, how much a paper talks about LLMs, and venue, the style index still jumps by ${zl.post_controlled_sd.toFixed(1)} SD. Among the ${zl.n_zero_llm_post} post-GPT-4 papers that never mention LLMs at all, it jumps by ${zl.post_zero_llm_papers_sd.toFixed(1)} SD.`),
+      `We held word count, page count, the number of references, how much a paper talks about LLMs, and the venue fixed, and the style index still jumps by ${zl.post_controlled_sd.toFixed(1)} ${g("sd", "SD")}. Among the ${zl.n_zero_llm_post} post-GPT-4 papers that never mention LLMs at all, it jumps by ${zl.post_zero_llm_papers_sd.toFixed(1)} SD.`),
     card("K · Did everyone move?", `<div class="tbl"><table><thead><tr><th>Part of the distribution</th><th>Shift</th><th>95% interval</th></tr></thead><tbody>${qRows}</tbody></table></div>`,
-      `${g("quant", "Quantile regression")} on the style index. Even the 10% of papers that changed least moved up, and the most-changed 10% moved several times as far. The new style spread widely but unevenly.`),
-    card("L · What truly did not change", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Shift (SD)</th><th>${g("tost", "Equivalence test")}</th></tr></thead><tbody>${eRows}</tbody></table></div>`,
-      `“No change” is a claim that needs its own test. Sentence length, semicolons, questions, introduction and related-work length, and the number of figures are statistically shown to be within ±0.2 SD of 2020. Lists of three rose a little and claims of being “first” fell a little.`),
+      `A ${g("quant", "quantile regression")} on the style index shows that even the 10% of papers that changed least moved up, while the 10% that changed most moved about four times as far. Most papers changed a little and some changed a lot.`),
+    card("L · What did not change", `<div class="tbl"><table><thead><tr><th>Measure</th><th>Shift (SD)</th><th>${g("tost", "Equivalence test")}</th></tr></thead><tbody>${eRows}</tbody></table></div>`,
+      `A claim of no change needs its own test, because a non-significant result could simply mean too little data. Sentence length, semicolons, questions, introduction and related-work length, and the number of figures are statistically shown to be within ±0.2 SD of 2020. Lists of three rose a little and claims of being “first” fell a little.`),
     card("M · More LLM talk, more new style", `<div class="big">+${dz.slope_per_log_unit_sd.toFixed(2)} SD</div><p class="small">style index per log-unit of LLM mentions, within 2024–26 papers (p < 0.001)</p>`,
-      `A ${g("dose", "dose-response")}: papers that discuss LLMs more show more of the new style. But papers with no LLM mentions at all already sit about +2 SD above 2020, so the topic adds to the shift rather than causing it.`),
+      `This is a ${g("dose", "dose-response")}: papers that discuss LLMs more show more of the new style. However, papers that never mention LLMs already sit about 2 SD above 2020, so the topic adds to the shift but does not explain it.`),
     card("N · How strict is the non-LLM control?", `<div class="tbl"><table><thead><tr><th>Post-GPT-4 papers used</th><th>Papers</th><th>AUC</th></tr></thead><tbody>${th}</tbody></table></div>`,
       `However strictly we remove LLM papers, down to papers that never once mention LLMs, the separation from 2020 barely moves.`),
     card("O · Is the classifier just lucky?", `<div class="big">${cp.real_auc.toFixed(2)} vs ${cp.perm_max.toFixed(2)}</div><p class="small">real ${g("auc", "AUC")} vs the best of 200 runs with shuffled labels (${g("perm", "permutation test")}, p < 0.005)</p>`,
-      `With shuffled labels the classifier averages ${cp.perm_mean.toFixed(2)} and never beats ${cp.perm_max.toFixed(2)}. The real labels give ${cp.real_auc.toFixed(2)}. The style difference is real, not an artifact of having many features.`),
+      `With shuffled labels the classifier averages ${cp.perm_mean.toFixed(2)} and never beats ${cp.perm_max.toFixed(2)}, while the real labels give ${cp.real_auc.toFixed(2)}, so the result does not come from having many features to fit.`),
     card("P · Does one venue drive it?", `<div class="big">${lv.min.toFixed(2)}–${lv.max.toFixed(2)}</div><p class="small">pooled AUC when any one venue is dropped (all venues: ${lv.full.toFixed(2)})</p><div class="tbl"><table><thead><tr><th>Each venue alone</th><th>AUC</th></tr></thead><tbody>${lvRows}</tbody></table></div>`,
-      `Removing any single venue barely changes the overall result. Every venue on its own shows a large shift.`),
+      `Removing any single venue barely changes the overall result, and each venue on its own shows a large shift.`),
   ].join("");
   $("#statgrid").insertAdjacentHTML("beforeend", html);
 })();
