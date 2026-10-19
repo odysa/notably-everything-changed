@@ -405,7 +405,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Statistics</div>
     <h2>How sure are we?</h2>
-    <p class="lede">These are the four checks we would want to see first as reviewers. The others are one click away, and the glossary at the bottom explains the terms.</p>
+    <p class="lede">These are the checks we would want to see first as reviewers, including the one that did not go our way. The others are one click away, and the glossary at the bottom explains the terms.</p>
   </div>
   <div class="statgrid" id="statgrid"></div>
   <details class="more"><summary>Show all statistical checks</summary><div class="statgrid" id="statgrid-more"></div></details>
@@ -457,7 +457,7 @@ details.more > .statgrid { margin-top: 18px; }
     <p><b>Corpus.</b> We use eight venues (OSDI, NSDI, MLSys, VLDB, NeurIPS, ICML, CVPR and ACL). Each has a 2019–20 baseline, a sample for every year from 2021 to 2024, and a 2024–26 comparison sample, and all but MLSys also have 2016 and 2018 samples to measure the trend before LLMs. For USENIX venues and MLSys we use the full proceedings; for the others we draw random samples of 80–200 papers per year. COLM, founded in 2024, and EuroSys, whose PDFs we could not download in bulk, use arXiv versions and are reported separately. NeurIPS stops at 2024 because the 2025 proceedings were not yet posted.</p>
     <p><b>Text.</b> We keep only body prose and drop references, captions, headers, appendices and paragraphs under 40 words. Because we always compare a venue with itself, differences between templates mostly cancel. We also leave Limitations, ethics and impact sections out of the style counts, because venue rules made them mandatory in the later years.</p>
     <p><b>Attribution.</b> We call a change LLM-era only if it did not happen between 2016 and 2020, if it jumps after 2022 in the yearly samples, and if it also appears in papers that are not about LLMs. Changes to the structure of papers, such as Limitations sections, longer PDFs and more references, fail these tests and trace back to venue rules and older trends.</p>
-    <p><b>Caveats.</b> What we measure is a change in style whose timing matches the arrival of LLMs. We cannot tell whether any particular paper was written with an LLM, and nothing on this page is a claim about a specific paper. Authors imitating each other, grammar tools, and changes in who writes CS papers could all contribute to the shift.</p>
+    <p><b>Caveats.</b> What we measure is a change in style whose timing matches the arrival of LLMs. We cannot tell whether any particular paper was written with an LLM, and nothing on this page is a claim about a specific paper. Authors imitating each other, grammar tools, and changes in who writes CS papers could all contribute to the shift. When we asked today's Claude models to edit 2020 paragraphs, they reproduced the change in tone but not the riders or the “Additionally/Notably” openers, so we have not yet shown that LLM editing produces the full pattern.</p>
   </div>
 </details>
 
@@ -1007,11 +1007,20 @@ $("#gloss").innerHTML = GL.map(([t, id, d]) => `<div id="g-${id}"><dt>${t}</dt><
       `Removing any single venue barely changes the overall result, and each venue on its own shows a large shift.`),
   ].join("");
   $("#statgrid").insertAdjacentHTML("beforeend", html);
+  $("#statgrid").insertAdjacentHTML("beforeend", card("Q · Can today's LLMs reproduce it?",
+    `<div class="tbl"><table><thead><tr><th>Measure</th><th>Real change, 2020 → 2025</th><th>Claude edits of 2020 text</th></tr></thead><tbody>
+      <tr><td>Functional riders</td><td>up</td><td>down</td></tr>
+      <tr><td>“Additionally/Notably”</td><td>up</td><td>down</td></tr>
+      <tr><td>Interpretive riders</td><td>up</td><td>none added</td></tr>
+      <tr><td>Elevated synonyms</td><td>up</td><td>flat or down (slightly up when asked to “rewrite”)</td></tr>
+      <tr><td>Boosters</td><td>up</td><td>up</td></tr>
+      <tr><td>Hedges, passive voice</td><td>down</td><td>down</td></tr></tbody></table></div>`,
+    `We asked today's Claude models (Haiku, Sonnet, Opus) to grammar-check, polish, improve, rewrite or draft from notes 160 paragraphs from 2019–20 papers. They reproduce the change in tone, with more boosters and fewer hedges, but they remove the riders and the “Additionally/Notably” openers instead of adding them. The writing tools of 2023–24, which the authors of these papers actually used, may behave differently, and we could not test them. This is the main open question in the study.`));
 })();
 
 /* ---------- keep four key stat cards visible ---------- */
 (() => {
-  const keep = ["I", "B", "C", "D"], grid = $("#statgrid"), more = $("#statgrid-more");
+  const keep = ["I", "B", "C", "D", "Q"], grid = $("#statgrid"), more = $("#statgrid-more");
   const cards = [...grid.children];
   const key = (f) => (f.querySelector("h3")?.textContent || "").split(" ")[0];
   cards.forEach((f) => { if (!keep.includes(key(f))) more.appendChild(f); });
