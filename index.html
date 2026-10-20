@@ -314,8 +314,8 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="facts">
     <div class="fact"><b>9,472</b><span>full papers read across 12 computer science conferences</span></div>
     <div class="fact"><b>2024</b><span>the clearest fitted jump in our combined writing-style measure</span></div>
-    <div class="fact"><b>~11×</b><span>as many matches for “…, highlighting …” type wording per 1,000 words; the software has not checked what each phrase means</span></div>
-    <div class="fact"><b>92%</b><span>of earlier-versus-later paper pairs correctly ordered by a style-only model when tested on a conference it had not seen</span></div>
+    <div class="fact"><b>~11×</b><span>as many matches for “…, highlighting …” type wording per 1,000 words; no person has yet checked each match's meaning</span></div>
+    <div class="fact"><b>92%</b><span>of earlier-versus-later paper pairs correctly ordered on average by a style-only model at conferences it had not seen</span></div>
   </div>
 </header>
 
@@ -358,7 +358,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Context</div>
     <h2>When the tools arrived</h2>
-    <p class="lede">We label 2019–20 the earlier publication baseline and 2024–26 the later cohort. Release dates help orient the timeline; publication year cannot establish when a PDF was written or revised.</p>
+    <p class="lede">We compare papers published in 2019–20 with papers published in 2024–26. Release dates help orient the timeline; publication year cannot establish when a PDF was written or revised.</p>
   </div>
   <figure>
     <div class="chart-scroll"><svg id="tl-chart" class="chart" viewBox="0 0 900 250" role="img" aria-label="Timeline of LLM releases and sample years"></svg></div>
@@ -378,8 +378,8 @@ details.more > .statgrid { margin-top: 18px; }
 <section id="break" class="wide">
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">The evidence</div>
-    <h2>Changes around the 2024 cohort</h2>
-    <p class="lede">Each thin line is one venue and the bold line is their average. Several measures show their largest change around the 2024 publication cohort; timing varies by feature.</p>
+    <h2>Changes around 2024</h2>
+    <p class="lede">Each thin line is one conference and the bold line is their average. Several measures show their largest change in papers published around 2024; timing varies by pattern.</p>
   </div>
   <figure>
     <div class="controls">
@@ -447,7 +447,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Detection</div>
     <h2>Can a model tell them apart?</h2>
-    <p class="lede">Given one earlier paper and one later paper, a model using writing style picks the later one about 92 times in 100, even at a conference it had not seen. It is sorting publication periods, not detecting AI use. Topics, authors and shared changes over time could also help explain the difference.</p>
+    <p class="lede">Given one earlier paper and one later paper, a model using writing style picks the later one about 92 times in 100 on average across conferences it had not seen. It is sorting publication periods, not detecting AI use. Topics, authors and shared changes over time could also help explain the difference.</p>
   </div>
   <details class="more"><summary>For researchers: model evaluation and interactive plots</summary>
   <p class="small muted">A classifier using 33 style measures separates 3,949 originally designated earlier and later papers (1,297 pre, 2,652 post): AUC 0.934 with preprocessing fitted inside each fold, and 0.922 on entirely unseen venues. Other main-venue papers primarily inform the yearly trends. On a later-sampled EMNLP check, the fixed model gives era AUC 0.891 [0.836, 0.934] on 158 eligible papers, 79 per era, with no EMNLP tuning or normalization. That interval resamples papers within years and does not capture common-year or author effects. The plots below illustrate the original descriptive model, whose preprocessing used the full earlier sample; its scores are not the corrected evaluation.</p>
