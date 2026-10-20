@@ -289,7 +289,7 @@ details.more > .statgrid { margin-top: 18px; }
 </nav>
 
 <header class="hero wide">
-  <div class="eyebrow">October 2026 · 9,472 papers · 12 venues (10 main + 2 post-only)</div>
+  <div class="eyebrow">October 2026 · 9,472 papers · 12 computer science conferences</div>
   <h1 class="hero-h"><span class="mark">Notably,</span> <em>everything</em> changed.</h1>
   <p class="sub">We read 9,472 computer science papers and found a clear change in how they are written around 2024. This shows a shift in published writing; it does not tell us who used AI.</p>
   <div class="quicklinks ui small"><a href="downloads/paper.pdf">Read the paper (PDF)</a><a href="#downloads">Code and numeric data</a><a href="#play">Play the five-round game</a></div>
@@ -313,7 +313,7 @@ details.more > .statgrid { margin-top: 18px; }
   </div>
   <div class="facts">
     <div class="fact"><b>9,472</b><span>full papers read across 12 computer science conferences</span></div>
-    <div class="fact"><b>2024</b><span>the clearest fitted jump in our combined writing-style measure</span></div>
+    <div class="fact"><b>2024</b><span>the year the combined style score jumps most clearly</span></div>
     <div class="fact"><b>~11×</b><span>as many matches for “…, highlighting …” type wording per 1,000 words; no person has yet checked each match's meaning</span></div>
     <div class="fact"><b>92%</b><span>of earlier-versus-later paper pairs correctly ordered on average by a style-only model at conferences it had not seen</span></div>
   </div>
@@ -323,14 +323,14 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">What we counted</div>
     <h2>What do these measures mean?</h2>
-    <p class="lede">We count visible wording patterns in the extracted body text of each paper. For phrase counts, we compare how often a pattern appears per 1,000 words so papers of different lengths can be compared.</p>
+    <p class="lede">We count visible wording patterns in the main text of each paper. For phrase counts, we compare how often a pattern appears per 1,000 words so papers of different lengths can be compared.</p>
   </div>
   <div class="measure-grid">
     <article><h3>Comma + <i>-ing</i> phrases</h3><p>Words after a comma such as “enabling” or “highlighting”. The two word lists count different kinds of these phrases.</p><p class="example">Example: “The cache helps, enabling larger batches.” A word match does not verify its grammar or meaning.</p></article>
     <article><h3>Word choice</h3><p>Formal words such as “crucial” and “pivotal” became more common compared with “important”. We also count a separate list of words such as “seamless” and “robust”.</p><p class="example">These are counts of words, not a judgment that one writing style is better.</p></article>
     <article><h3>Confident or cautious language</h3><p>We compare emphatic words such as “significantly” with cautious words such as “may” and “likely”. The balance shifts toward more emphatic wording.</p></article>
     <article><h3>Signpost openers</h3><p>We count sentences that start with “Additionally,” or “Notably,”. They tell a reader that another point or a notable result is coming.</p></article>
-    <article><h3>Reading ease</h3><p>A standard readability formula combines word and sentence length. Its score fell in later papers: words grew longer even though sentences did not.</p></article>
+    <article><h3>Reading ease</h3><p>A standard formula combines word and sentence length. By this measure, later papers are harder to read: words grew longer even though sentences did not.</p></article>
     <article><h3>Combined style score</h3><p>We combine nine selected text-pattern counts, including the two comma + <i>-ing</i> lists, the openers, em dashes and “This shows …” phrasing, after comparing papers within the same conference.</p><p class="example">It summarizes writing patterns; it cannot identify whether a paper used AI.</p></article>
   </div>
 </section>
@@ -425,7 +425,7 @@ details.more > .statgrid { margin-top: 18px; }
   </div>
   <figure>
     <h3>Topic words, for contrast</h3>
-    <p class="small muted ui">These words rise less among papers below our LLM-topic threshold. They are more strongly associated with the measured topic flag; topic and style are not completely separable.</p>
+    <p class="small muted ui">These words rise less in papers that rarely mention LLMs. They are more closely linked to paper topic than the style patterns above, though topic and style cannot be completely separated.</p>
     <div class="chips" id="w-topic"></div>
     <p class="small muted ui">The words that became famous as signs of ChatGPT in biomedical abstracts mostly did not reach CS. “Delve” appears in about 4% of 2024–26 papers, and “tapestry” and “testament” are as rare as they were in 2020.</p>
   </figure>
@@ -562,7 +562,7 @@ function rw(which) {
   $("#rw-txt").innerHTML = RW[which];
   $("#rw-a").setAttribute("aria-pressed", which === "a");
   $("#rw-b").setAttribute("aria-pressed", which === "b");
-  $("#rw-era").textContent = which === "a" ? "A sentence in the style of 2020" : "The same sentence in the style of 2025";
+  $("#rw-era").textContent = which === "a" ? "A sentence in the style of 2019–20" : "The same sentence in the style of 2024–26";
 }
 $("#rw-a").onclick = () => rw("a");
 $("#rw-b").onclick = () => rw("b");
