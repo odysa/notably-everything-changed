@@ -4,7 +4,7 @@ Interactive summary of a study of 9,472 computer science papers from twelve venu
 
 Live page: https://odysa.github.io/notably-everything-changed/
 
-The self-contained `index.html` embeds the interactive figures and data. `downloads/` stages the 10-page paper PDF, TeX source bundle, code and numeric-data reproduction bundle, selection protocol and checksums. The analysis bundle contains no source PDFs, extracted paper prose or WildChat conversation text. The paper and downloads are staged locally for review; this commit is not a public-release decision.
+The self-contained `index.html` embeds the interactive figures and data. `downloads/` contains the 12-page paper PDF, TeX source bundle, code and numeric-data reproduction bundle, selection protocol and checksums. The analysis bundle includes the separate CS replication's sampling catalog, selected source IDs, PDF hashes and numeric results. It contains no source PDFs, extracted paper prose or WildChat conversation text.
 
 Quoted sentences are short excerpts from published papers, shown by venue and year only, as corpus-level examples. Nothing on the page is a claim about how any individual paper was written.
 
