@@ -442,7 +442,7 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Detection</div>
     <h2>Can a model tell them apart?</h2>
-    <p class="lede">A classifier using 33 style measures separates earlier and later publication cohorts: AUC 0.934 with preprocessing fitted inside each fold, and 0.922 on entirely unseen venues. On a later-sampled EMNLP check, the fixed model gives era AUC 0.891 [0.836, 0.934] on 158 eligible papers, 79 per era, with no EMNLP tuning or normalization. That interval resamples papers within years and does not capture common-year or author effects. The interactive plots below illustrate the original descriptive model, whose preprocessing used the full earlier sample; its scores are not the corrected evaluation. No model here can identify LLM use by an individual paper.</p>
+    <p class="lede">A classifier using 33 style measures separates 3,949 originally designated earlier and later papers (1,297 pre, 2,652 post): AUC 0.934 with preprocessing fitted inside each fold, and 0.922 on entirely unseen venues. Other main-venue papers primarily inform the yearly trends. On a later-sampled EMNLP check, the fixed model gives era AUC 0.891 [0.836, 0.934] on 158 eligible papers, 79 per era, with no EMNLP tuning or normalization. That interval resamples papers within years and does not capture common-year or author effects. The interactive plots below illustrate the original descriptive model, whose preprocessing used the full earlier sample; its scores are not the corrected evaluation. No model here can identify LLM use by an individual paper.</p>
   </div>
   <div class="det-facts" id="det-facts"></div>
   <figure>
