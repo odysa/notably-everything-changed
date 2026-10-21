@@ -4,6 +4,8 @@ Interactive summary of a study of 9,472 computer science papers from twelve venu
 
 Live page: https://odysa.github.io/notably-everything-changed/
 
+Open research repository (paper source, analysis code, numeric measurements, and replication records): https://github.com/odysa/notably-everything-changed-analysis
+
 The self-contained `index.html` embeds the interactive figures and data. `downloads/` contains the 12-page paper PDF, TeX source bundle, code and numeric-data reproduction bundle, selection protocol and checksums. The analysis bundle includes the separate CS replication's sampling catalog, selected source IDs, PDF hashes and numeric results. It contains no source PDFs, extracted paper prose or WildChat conversation text.
 
 Quoted sentences are short excerpts from published papers, shown by venue and year only, as corpus-level examples. Nothing on the page is a claim about how any individual paper was written.
