@@ -518,13 +518,13 @@ details.more > .statgrid { margin-top: 18px; }
 <section id="words" class="wide">
   <div class="col" style="display:grid;gap:14px;margin-inline:0">
     <div class="eyebrow">Words in, words out</div>
-    <h2>The casual verbs of 2020 are disappearing</h2>
-    <p class="lede">The bars show the share of papers that use each term at least once. We list a rising term only if it rose in every venue, including in papers that are not about LLMs.</p>
+    <h2>Some everyday phrasings of 2020 became less common</h2>
+    <p class="lede">The bars show the share of papers that use each term at least once. We list a rising term only if it rose in at least nine of the ten venues and also rose in papers that are not about LLMs.</p>
   </div>
   <div class="legend"><span><i style="background:var(--pre)"></i>2019–20</span><span><i style="background:var(--post)"></i>2024–26</span></div>
   <div class="words">
-    <figure><h3>Rising, in every field</h3><div class="wlist" id="w-up"></div></figure>
-    <figure><h3>Falling, in every field</h3><div class="wlist" id="w-down"></div></figure>
+    <figure><h3>Rising in at least 9 of 10 venues</h3><div class="wlist" id="w-up"></div></figure>
+    <figure><h3>Falling most on average</h3><div class="wlist" id="w-down"></div></figure>
   </div>
   <figure>
     <h3>Topic words, for contrast</h3>
@@ -827,7 +827,7 @@ const SHIFTS = [
    ["2020 style", "We find that the gain may come from better initialization."],
    ["2025 style", "The gain stems from better initialization, significantly improving stability."]],
   ["Signposted blocks", "“Additionally,” ~2.9× · “Notably,” ~8×",
-   "Paragraphs got shorter, and more of them start with a label or with a word that announces their role. “Additionally” and “Notably” account for most of this; older connectives such as “Moreover” and “Thus” are used about as often as before.",
+   "Paragraphs got shorter, and more of them start with a label or with a word that announces their role. “Additionally” and “Notably” account for most of this; “Moreover” is used about as often as before, while “Thus” is about a quarter less frequent per 1,000 words.",
    ["2020 style", "We also tried a larger batch size."],
    ["2025 style", "Additionally, we evaluate a larger batch size."]],
   ["Harder to read", "Words with 3+ syllables: about 1 in 5 → about 1 in 4",
@@ -885,7 +885,7 @@ function wordRows(target, list, n) {
   });
 }
 wordRows($("#w-up"), D.vocab.style, 20);
-wordRows($("#w-down"), D.vocab.fall, 20);
+wordRows($("#w-down"), D.vocab.fall.filter((r) => r.term !== "de ned"), 20);
 D.vocab.topic.forEach((r) => { const s = document.createElement("span"); s.className = "chip"; s.textContent = `${r.term} ${pct(r.pre_df)}→${pct(r.post_df)}`; $("#w-topic").appendChild(s); });
 
 /* ---------- venues ---------- */
@@ -901,7 +901,7 @@ function showVenue(v) {
     <div><b>${pct(x.llm_pre)} → ${pct(x.llm_post)}</b><span>papers centred on LLMs (the topic shift)</span></div>
     <div><b class="mono" style="font-size:24px">${x.n_pre} / ${x.n_post}</b><span>papers, pre / post</span></div>`;
   const neutral = new Set(["sent_len", "pages", "n_refs", "has_limitations", "emdash_1k"]);
-  let h = `<thead><tr><th>Feature</th><th>2016</th><th>2019–20</th><th>2024–26</th><th>AUC</th></tr></thead><tbody>`;
+  let h = `<thead><tr><th>Feature</th><th>2016</th><th>2019–20</th><th>2024–26</th><th>Later outranks earlier (AUC)</th></tr></thead><tbody>`;
   x.features.forEach((r) => {
     const isShare = /pct_long|extensive|has_lim/.test(r.f);
     const f = (v) => v == null ? "–" : isShare ? pct(v) : fmt(v);
@@ -918,10 +918,10 @@ showVenue("ACL");
 
 /* ---------- unchanged ---------- */
 const U = [
-  ["Sentence length", "21.9 → 21.7 words on average, with an AUC of 0.48 and no break year."],
+  ["Sentence length", "22.0 → 21.8 words on average, with an AUC of 0.48 and no break year."],
   ["Sentence-length variability", "Down about 0.2 SD after trend adjustment, which is real but far smaller than the rider shift."],
-  ["“not only … but also”", "0.13 → 0.15 per 1,000 words, with no break year."],
-  ["“X, Y, and Z” lists of three", "Small rise that disappears after removing the pre-LLM trend."],
+  ["“not only … but also”", "0.13 → 0.16 per 1,000 words, with no break year."],
+  ["“X, Y, and Z” lists of three", "Small rise; the excess after trend adjustment is +0.12 SD and is not statistically clear (p = 0.06). This does not establish no change."],
   ["Claims of being first", "“first” and “to our knowledge” are flat or slightly down, and so is “state of the art”."],
   ["“delve”, “tapestry”, “testament”", "The biomedical ChatGPT words stay rare in CS (“delve” in about 4% of papers)."],
   ["Paper structure", "Introduction and related-work length changed little; section counts and some formatting changed with venue rules."],
@@ -1184,13 +1184,13 @@ if (location.hash) openFor(location.hash);
   const pctf = (x) => (x * 100).toFixed(0) + "%";
   $("#det-facts").innerHTML = `
     <div><b>${pctf(E.cv["accuracy@0.5"])}</b><span>original descriptive era-label accuracy; normalization used the full earlier sample</span></div>
-    <div><b>${E.cv.auc.toFixed(2)}</b><span>original descriptive era-separation AUC; corrected fold-local AUC is 0.934</span></div>
-    <div><b>${pctf(post.filter((x) => x > pre[Math.floor(0.95 * pre.length)]).length / post.length)}</b><span>later-cohort share flagged at a 5% earlier-cohort flag rate, original model</span></div>
-    <div><b>${Math.min(...Object.values(E.lovo).map((r) => r.auc)).toFixed(2)}–${Math.max(...Object.values(E.lovo).map((r) => r.auc)).toFixed(2)}</b><span>original per-venue AUC range with target-venue earlier-paper normalization</span></div>`;
+    <div><b>${E.cv.auc.toFixed(2)}</b><span>how often a later paper outranks an earlier one (original descriptive AUC); corrected fold-local value is 0.934</span></div>
+    <div><b>${pctf(post.filter((x) => x > pre[Math.floor(0.95 * pre.length)]).length / post.length)}</b><span>share of later papers above the score crossed by only 5% of earlier papers (original model)</span></div>
+    <div><b>${Math.min(...Object.values(E.lovo).map((r) => r.auc)).toFixed(2)}–${Math.max(...Object.values(E.lovo).map((r) => r.auc)).toFixed(2)}</b><span>range across venues of how often a later paper outranks an earlier one (original AUC, using target-venue normalization)</span></div>`;
   const thrFor = (fpr) => pre[Math.min(pre.length - 1, Math.floor((1 - fpr) * pre.length))];
   const share = (arr, t) => arr.filter((x) => x > t).length / arr.length;
   const GROUPS = Object.keys(S).filter((k) => k !== "cv_pre" && k !== "cv_post");
-  const gcol = (k) => /2016|2018|2021|2022/.test(k) ? "var(--pre)" : /2023/.test(k) ? "var(--ink-3)" : "var(--post)";
+  const gcol = (k) => { const year = Number((k.match(/\b20\d{2}\b/) || [])[0]); return year <= 2022 ? "var(--pre)" : year === 2023 ? "var(--ink-3)" : year >= 2024 ? "var(--post)" : "var(--ink-3)"; };
   const glab = (k) => k.replace("(pre-ChatGPT, unseen)", "· earlier publication years").replace("(transition, unseen)", "· intermediate years").replace("yearly samples (unseen)", "papers").replace("(unseen venue)", "· held-out venue (legacy normalization)");
   function hist(arr, bins) { const h = new Array(bins).fill(0); arr.forEach((x) => { h[Math.min(bins - 1, Math.floor(x * bins))]++; }); return h.map((c) => c / arr.length); }
   function draw() {
@@ -1216,7 +1216,7 @@ if (location.hash) openFor(location.hash);
   $("#det-fpr").addEventListener("input", draw);
   draw();
   const L = E.lovo;
-  $("#det-lovo").innerHTML = `<thead><tr><th>Held-out venue</th><th>Papers</th><th>AUC</th><th>Era accuracy</th><th>Later-cohort share at 5% earlier flags</th></tr></thead><tbody>` +
+  $("#det-lovo").innerHTML = `<thead><tr><th>Held-out venue</th><th>Papers</th><th>Later outranks earlier (AUC)</th><th>Era accuracy</th><th>Later-cohort share at 5% earlier flags</th></tr></thead><tbody>` +
     Object.entries(L).sort((a, b) => b[1].auc - a[1].auc).map(([v, r]) => `<tr><td>${v}</td><td>${r.n}</td><td>${r.auc.toFixed(2)}</td><td>${pctf(r["accuracy@0.5"])}</td><td>${pctf(r["tpr@fpr5"])}</td></tr>`).join("") + `</tbody>`;
   window.__redrawDetector = draw;
 })();
