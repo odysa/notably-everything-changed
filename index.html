@@ -441,18 +441,18 @@ details.more > .statgrid { margin-top: 18px; }
 <section id="play" class="game wide" aria-label="Before LLMs or after GPT-4 game">
   <div class="eyebrow">A game · 5 rounds</div>
   <h2 class="game-h">Before LLMs, or after GPT-4?</h2>
-  <p class="gsub">Each round shows the opening of a paragraph from a real ACL paper. Guess whether its publication year was 2016–2020, before ChatGPT, or 2025, after ChatGPT and GPT-4. Publication year does not tell us how the paragraph was written.</p>
+  <p class="gsub">Each round shows the opening of a paragraph from a real ACL paper. Guess whether its publication year was 2016 or 2020, before ChatGPT, or 2025, after ChatGPT and GPT-4. Publication year does not tell us how the paragraph was written.</p>
   <div class="quicklinks"><a href="#shifts">Skip the game: see the findings</a><a href="downloads/paper.pdf">Read the original paper (PDF)</a><a href="#downloads">Original study code and data</a></div>
   <div class="gcard" id="g-card">
     <div class="gtop"><span id="g-round"></span><span class="pips" id="g-pips" aria-hidden="true"></span><span id="g-score"></span></div>
     <p class="gpara" id="g-text"></p>
     <div class="gbtns" id="g-btns">
-      <button class="gpre" id="g-pre"><b>Before LLMs</b><span>published 2016–2020</span></button>
+      <button class="gpre" id="g-pre"><b>Before LLMs</b><span>published 2016 or 2020</span></button>
       <button class="gpost" id="g-post"><b>After GPT-4</b><span>published 2025</span></button>
     </div>
     <div class="greveal" id="g-reveal" aria-live="polite" hidden></div>
   </div>
-  <p class="tiny muted ui">Excerpts are the opening sentences of paragraphs from ACL Anthology papers (ACL 2016, 2020 and 2025), licensed CC BY 4.0. After you answer we show the source. We corrected PDF-extraction errors and removed run-in headings, but otherwise the words are the authors' own, and nothing here is a claim about how any paper was written.</p>
+  <p class="tiny muted ui">Excerpts are the opening sentences of paragraphs from ACL Anthology papers (ACL 2016 and 2020 for the earlier group; ACL 2025 long papers for the later group), licensed CC BY 4.0. No selection procedure is recorded for these 16 examples. This illustrative game is not a validated test of your ability to distinguish publication eras in other papers. After you answer we show the source. We corrected PDF-extraction errors and removed run-in headings, but otherwise the words are the authors' own, and nothing here is a claim about how any paper was written.</p>
 </section>
 
 
@@ -989,7 +989,7 @@ $("#statgrid").innerHTML = [
   const shuffle = (a) => { a = [...a]; for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; };
   function newGame() {
     const pre = shuffle(G.filter((g) => g.era === "pre")), post = shuffle(G.filter((g) => g.era === "post"));
-    const nPre = 2 + Math.floor(Math.random() * 2);            // 2 or 3 of each, so counting does not help
+    const nPre = 2 + Math.floor(Math.random() * 2);            // balance the deck; revealed answers can still inform later guesses
     deck = shuffle([...pre.slice(0, nPre), ...post.slice(0, ROUNDS - nPre)]);
     i = 0; right = 0; results = [];
     show();
@@ -1006,6 +1006,7 @@ $("#statgrid").innerHTML = [
     pips();
   }
   function guess(era) {
+    if (i >= ROUNDS || results.length !== i) return;
     const g = deck[i], ok = era === g.era;
     results.push(ok); if (ok) right++;
     const when = g.era === "pre" ? "in the 2016–20 cohort" : "in the 2025 cohort";
@@ -1017,16 +1018,16 @@ $("#statgrid").innerHTML = [
     $("#g-reveal").hidden = false; $("#g-btns").hidden = true;
     $("#g-score").textContent = `${right} / ${results.length} right`;
     pips();
-    $("#g-next").onclick = () => { if (last) end(); else { i++; show(); } };
+    $("#g-next").onclick = () => { if (results.length !== i + 1) return; if (last) end(); else { i++; show(); } };
     $("#g-next").focus({ preventScroll: true });
   }
   function end() {
     const msg = right === 5 ? "You matched the publication labels in all five examples."
       : right === 4 ? "You matched most publication labels in this short game."
-      : right === 3 ? "Around chance. Short excerpts are hard: the change shows up across thousands of papers, not reliably in one."
+      : right === 3 ? "Three of five. This short game does not measure how reliably publication eras can be distinguished in general."
       : "Hard to tell apart. Some 2016–2020 papers already sound polished, and many 2025 ones are plain.";
     $("#g-round").textContent = "Done";
-    $("#g-text").innerHTML = `<span class="gend"><span class="big">${right} / ${ROUNDS}</span><span>${msg}</span><span class="small muted">Scroll down to see what actually changed: the constructions, the words and the statistics behind them.</span></span>`;
+    $("#g-text").innerHTML = `<span class="gend"><span class="big">${right} / ${ROUNDS}</span><span>${msg}</span><span class="small muted">Independent fair-coin guesses score 4 or 5 out of 5 about 19% of the time. This is an illustration, not an estimate of accuracy on other papers.</span><span class="small muted">Scroll down to see what actually changed: the constructions, the words and the statistics behind them.</span></span>`;
     $("#g-btns").hidden = true;
     $("#g-reveal").innerHTML = `<div><button class="btn" id="g-again">Play again</button> <a class="ui small" href="#break" style="margin-left:12px">See the findings</a></div>`;
     $("#g-reveal").hidden = false;
