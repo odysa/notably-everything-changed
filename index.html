@@ -324,7 +324,7 @@ details.more > .statgrid { margin-top: 18px; }
 <nav class="top" aria-label="Sections">
   <div class="in">
     <span class="brand">Notably,</span>
-    <a href="#census">New census</a><a href="#walkthrough">Start here</a><a href="#shifts">Findings</a><a href="#measures">Measures</a><a href="#break">Evidence</a><a href="#play">Play</a><a href="#stats">Checks</a><a href="#downloads">Paper &amp; data</a>
+    <a href="census-update.html">New findings · Oct 24</a><a href="#census">New census</a><a href="#walkthrough">Start here</a><a href="#shifts">Findings</a><a href="#measures">Measures</a><a href="#break">Evidence</a><a href="#play">Play</a><a href="#stats">Checks</a><a href="#downloads">Paper &amp; data</a>
   </div>
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 </nav>
@@ -333,12 +333,12 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="eyebrow">Updated October 2026 · original sample and new conference census</div>
   <h1 class="hero-h"><span class="mark">Notably,</span> <em>everything</em> changed.</h1>
   <p class="sub">Our original 9,472-paper study found a change in academic writing around 2024. A new census of 21,306 NLP conference papers tests the same three wording patterns against each venue’s earlier trend.</p>
-  <div class="quicklinks ui small"><a href="#census">See the new census</a><a href="downloads/paper.pdf">Read the original paper (PDF)</a><a href="#play">Play the five-round game</a></div>
+  <div class="quicklinks ui small"><a href="census-update.html">Read the new findings</a><a href="#census">See the census figures</a><a href="downloads/paper.pdf">Read the original paper (PDF)</a><a href="#play">Play the five-round game</a></div>
   <div class="tldr">
     <div class="eyebrow">In short</div>
     <ul>
       <li>Later papers more often use phrases such as “…, highlighting …”, stronger words such as “crucial”, and sentences that begin with Additionally or Notably.</li>
-      <li>A new census of ACL, EMNLP and NAACL papers finds all three fixed patterns above their 2016–22 trends in 2024–25. Separate checks in ML, vision, systems, security and arXiv categories also find an excess.</li>
+      <li>A new census of ACL, EMNLP and NAACL papers finds all three fixed patterns above their 2016–22 trends in 2024–25. Separate checks in ML, vision, systems, security and arXiv categories also find increases; their comparison periods differ.</li>
       <li>This is a study of published text, not a test for AI use. The authors, topics, editing tools and timing of revisions may also have changed.</li>
     </ul>
   </div>
@@ -363,24 +363,25 @@ details.more > .statgrid { margin-top: 18px; }
   <div class="census-copy col" style="margin-inline:0">
     <div class="eyebrow">New evidence · 2016–2026</div>
     <h2>A much larger check of the same patterns</h2>
+    <p class="ui small"><a href="census-update.html">Read the October 24 findings and their limits →</a> · <a href="assets/round4/census-evidence.json">Aggregate result keys and intervals (JSON)</a></p>
     <p class="lede">We collected all 21,368 main-conference papers with PDFs from ACL (2016–26), EMNLP (2016–25) and the NAACL years held during that period. After the same minimum-length rule, 21,306 remained. The original 9,472 papers were the discovery sample; the counts here are a separate census and should not be added to that sample.</p>
   </div>
   <div class="census-grid">
-    <article><b>Above the old trend</b><p>In 2024–25, the extra matches per 1,000 words were +1.06 for functional <i>-ing</i> wording, +0.25 for interpretive <i>-ing</i> wording and +0.41 for <i>Additionally/Notably</i> openers.</p><span>Each venue is compared with its own 2016–22 trend. All three 95% intervals exclude zero.</span></article>
-    <article><b>The same authors changed</b><p>Among 762 people who first-authored papers in both 2020–22 and 2024–26, the increases were 57–72% as large as the all-paper changes.</p><span>This controls who the first author is, though it cannot identify who wrote or edited the prose.</span></article>
-    <article><b>One visible sign receded</b><p>ACL openers fell from 0.71 to 0.38 per 1,000 words between 2025 and 2026, as registered before the 2026 text was extracted. Functional <i>-ing</i> wording rose further.</p><span>The opener decline does not reveal whether authors, models or writing norms changed.</span></article>
+    <article><b>Above the old trend</b><p>In 2024–25, the extra matches per 1,000 words were +1.06 for functional <i>-ing</i> wording, +0.25 for interpretive <i>-ing</i> wording and +0.41 for <i>Additionally/Notably</i> openers.</p><span>These are equal-venue averages for ACL and EMNLP against their own 2016–22 trends. NAACL is fitted separately. All three 95% intervals exclude zero.</span></article>
+    <article><b>The same authors changed</b><p>Among 762 people who first-authored papers in both 2020–22 and 2024–26, the increases were 58–72% as large as the all-paper changes.</p><span>This controls who the first author is, though it cannot identify who wrote or edited the prose.</span></article>
+    <article><b>One opener pattern fell in 2026</b><p>ACL openers fell from 0.71 to 0.38 per 1,000 words between 2025 and 2026, as registered before the 2026 text was extracted. Functional <i>-ing</i> wording rose further.</p><span>The opener decline does not reveal whether authors, models or writing norms changed.</span></article>
   </div>
   <figure class="census-figure">
     <img src="assets/round4/acl_series.png" alt="Yearly rates for three wording patterns in ACL, EMNLP and NAACL papers. All rise above the earlier trend after 2022; ACL openers fall in 2026." loading="lazy">
-    <figcaption>Three fixed patterns measured per 1,000 body words. Dashed lines extend each venue’s 2016–22 trend. ACL has 2026 papers; EMNLP and NAACL end earlier in this dataset.</figcaption>
+    <figcaption>Three fixed patterns measured per 1,000 body words. Dashed lines extend ACL’s and EMNLP’s 2016–22 trends; NAACL has a separate fit. ACL has 2026 papers; EMNLP and NAACL end earlier in this dataset.</figcaption>
   </figure>
   <div class="census-figures">
-    <figure class="census-figure"><img src="assets/round4/acl_panel.png" alt="The same 762 first authors show 57 to 72 percent of the all-paper increase in the three patterns; a comparable pre-LLM author panel changes little." loading="lazy"><figcaption>Change among the same first authors, shown as a share of the change across all papers. The pre-LLM comparison for 554 repeat first authors is near zero. Error bars show 95% intervals.</figcaption></figure>
-    <figure class="census-figure"><img src="assets/round4/acl_openers.png" alt="Additionally rises through 2025 then drops in 2026, while Notably remains elevated and Crucially rises." loading="lazy"><figcaption>Among ACL sentence openers, <i>Additionally</i> retreats in 2026. This descriptive breakdown was explored after the registered combined-opener test.</figcaption></figure>
+    <figure class="census-figure"><img src="assets/round4/acl_panel.png" alt="The same 762 first authors show 58 to 72 percent of the all-paper increase in the three patterns; a comparable pre-LLM author panel changes little." loading="lazy"><figcaption>Change in papers by the same first authors. The 58–72% comparison is a ratio of point estimates; error bars scale the within-author 95% intervals by a fixed all-paper point estimate and exclude uncertainty in that denominator. The pre-LLM panel of 554 repeat first authors changes little.</figcaption></figure>
+    <figure class="census-figure"><img src="assets/round4/acl_openers.png" alt="Additionally rises through 2025 then drops in 2026, while Notably remains elevated and Crucially rises." loading="lazy"><figcaption>Among ACL sentence openers, <i>Additionally</i> falls in 2026. This descriptive breakdown was explored after the registered combined-opener test.</figcaption></figure>
   </div>
   <details class="more"><summary>More checks and limits</summary>
     <div class="census-copy small">
-      <p>The excess remains among papers that are not about LLMs, in NAACL on its own, and when Limitations sections are removed. Separate frozen replications found the same three-pattern excess in 1,192 new ML and vision papers, 3,254 FAST, Security and ATC papers, and 12,215 analysed arXiv first versions across six CS categories (12,600 selected; 376 below the word-count gate and 9 not retrieved).</p>
+      <p>The excess remains among papers that are not about LLMs, in NAACL on its own, and when Limitations sections are removed. Separate frozen replications found increases in all three patterns in 1,192 new ML and vision papers (2025 minus 2020), 3,254 analysed FAST, Security and ATC papers (3,258 in the frame, compared with trend), and 12,215 analysed arXiv first versions across six CS categories (12,600 selected; 376 below the word-count gate and 9 not retrieved).</p>
       <p>Across 1,750 same-paper arXiv revision pairs, two patterns increased more in papers revised across late 2022 than in papers revised across late 2020. Shared paragraphs showed no clear difference; the data do not show authors rewriting existing text. A small biology sample did not meet its three-pattern rule. A parser classified 97–98% of the <i>-ing</i> matches as attached clauses in both eras; human annotation is still pending.</p>
       <p>These are observational counts in published text. They cannot show whether an individual paper used AI or what caused the community-wide change. The downloadable paper and interactive panels below describe the earlier discovery sample; the new census manuscript and reproduction bundle are still being prepared.</p>
     </div>

@@ -11,3 +11,17 @@ The self-contained `index.html` embeds the original interactive figures and data
 Quoted sentences are short excerpts from published papers, shown by venue and year only, as corpus-level examples. Nothing on the page is a claim about how any individual paper was written.
 
 The opening game quotes paragraphs from ACL Anthology papers (CC BY 4.0), each credited with title, authors and link after the guess; PDF-extraction errors were corrected and run-in headings removed.
+
+## October 24 census update
+
+`census-update.html` explains the census trend, repeat-author and 2026 results,
+with the three existing census figures and a link to aggregate evidence at
+`assets/round4/census-evidence.json`. It contains no paper text or author IDs.
+The outside-CS study is explicitly pending. Historical downloads remain
+labelled as the original study. The homepage now distinguishes pooled venue
+estimates and replication estimands.
+
+Static checks cover unique IDs, local links/anchors, image alternative text,
+inline JavaScript syntax and the aggregate cohort counts. Native Chrome
+verification was unavailable (`cgWindowNotFound`); no new visual browser pass
+is claimed.

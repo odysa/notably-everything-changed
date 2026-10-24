@@ -1,0 +1,317 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="New results from 21,306 NLP papers: trends, repeat authors and the 2026 opener decline, with evidence and limits."><title>What the whole record shows — Notably, Everything Changed</title><link rel="canonical" href="https://odysa.github.io/notably-everything-changed/census-update.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+/* Layout: a manuscript under revision. One reading column (~68ch) for prose; figures break out
+   to a wider measure. 2020 prose is fountain-pen blue ink; 2024-26 prose is highlighter amber. */
+:root {
+  --paper: #f6f7f9;
+  --sheet: #ffffff;
+  --ink: #15181d;
+  --ink-2: #4a5160;
+  --ink-3: #7b8292;
+  --rule: #dfe2e8;
+  --pre: #2a5aa8;          /* 2019-20: blue ink */
+  --pre-soft: #dbe5f6;
+  --post: #c96f00;         /* 2024-26: amber line */
+  --mark: #ffd36b;         /* highlighter fill */
+  --mark-ink: #2a2000;
+  --post-soft: #fff1cf;
+  --good: #1f7a4d;
+  --bad: #b23a2b;
+  --shade: rgba(255, 196, 64, 0.16);
+  --f-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-ui: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --measure: 68ch;
+  --wide: 1080px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1216; --sheet: #161a20; --ink: #e8eaee; --ink-2: #b4bac6; --ink-3: #8a92a2; --rule: #2a303a;
+    --pre: #86a9ee; --pre-soft: #1d2a44; --post: #f2b443; --mark: #8a6410; --mark-ink: #fff6dc; --post-soft: #2c2410;
+    --good: #5cc28e; --bad: #f0806f; --shade: rgba(242, 180, 67, 0.10); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1216; --sheet: #161a20; --ink: #e8eaee; --ink-2: #b4bac6; --ink-3: #8a92a2; --rule: #2a303a;
+  --pre: #86a9ee; --pre-soft: #1d2a44; --post: #f2b443; --mark: #8a6410; --mark-ink: #fff6dc; --post-soft: #2c2410;
+  --good: #5cc28e; --bad: #f0806f; --shade: rgba(242, 180, 67, 0.10); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 19px; line-height: 1.55;
+  margin: 0; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--pre); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--post); outline-offset: 2px; border-radius: 3px; }
+.col { max-width: var(--measure); margin-inline: auto; }
+.wide { max-width: var(--wide); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 500; text-wrap: balance; line-height: 1.12; margin: 0; }
+h2 { font-size: clamp(30px, 4.2vw, 44px); letter-spacing: -0.01em; }
+h3 { font-size: 22px; font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-ui); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.ui { font-family: var(--f-ui); }
+.mark { background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 88%, transparent 88%); color: var(--mark-ink); padding: 0 2px; border-radius: 2px; }
+.inkline { color: var(--pre); background: color-mix(in srgb, var(--pre) 15%, transparent); border-radius: 2px; padding: 0 2px; }
+.pre-c { color: var(--pre); } .post-c { color: var(--post); }
+.muted { color: var(--ink-2); }
+.small { font-size: 15px; }
+.tiny { font-size: 13px; }
+
+/* nav */
+nav.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); }
+nav.top .in { max-width: var(--wide); margin-inline: auto; display: flex; gap: 18px; align-items: center; overflow-x: auto; padding: 10px 16px; scrollbar-width: none; }
+nav.top a { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+nav.top a:hover { color: var(--ink); }
+nav.top .brand { font-family: var(--f-display); font-style: italic; font-size: 16px; color: var(--ink); margin-right: 6px; }
+.reading-progress { position: absolute; bottom: -1px; left: 0; height: 3px; width: 0; background: var(--post); pointer-events: none; }
+@media (max-width: 640px) { nav.top .in { flex-wrap: wrap; gap: 5px 14px; overflow-x: visible; } }
+
+section { padding-block: 72px 24px; display: grid; gap: 22px; }
+.lede { font-size: 21px; color: var(--ink-2); }
+
+/* hero */
+header.hero { padding-block: 64px 12px; display: grid; gap: 26px; }
+.hero .hero-h { font-size: clamp(40px, 6.6vw, 84px); letter-spacing: -0.02em; font-weight: 400; }
+.hero .hero-h em { font-style: italic; }
+.hero .sub { font-size: clamp(19px, 2.2vw, 24px); color: var(--ink-2); max-width: 44ch; }
+.rewrite { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 24px; display: grid; gap: 14px; }
+.rewrite-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.rewrite-era { border-left: 3px solid var(--pre); padding-left: 16px; display: grid; gap: 10px; align-content: start; }
+.rewrite-era.later { border-color: var(--post); }
+.rewrite .txt { font-size: clamp(18px, 2vw, 23px); line-height: 1.5; }
+@media (max-width: 760px) { .rewrite-pair { grid-template-columns: 1fr; } }
+.rewrite .txt del { color: var(--pre); text-decoration-thickness: 1.5px; }
+.rewrite .txt ins { text-decoration: none; }
+.btn { font-family: var(--f-ui); font-size: 14px; font-weight: 500; border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
+  padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn:hover { filter: brightness(1.1); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button { font-family: var(--f-ui); font-size: 13px; border: 0; background: transparent; color: var(--ink-2); padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.fact { padding: 16px 16px 18px 0; display: grid; gap: 4px; align-content: start; }
+.fact b { font-family: var(--f-display); font-weight: 500; font-size: 40px; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.fact span { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+.census-copy { display: grid; gap: 14px; }
+.census-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+.census-grid article { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: grid; gap: 9px; align-content: start; }
+.census-grid article b { font: 500 30px/1.1 var(--f-display); color: var(--post); }
+.census-grid article span { font: 13px/1.45 var(--f-ui); color: var(--ink-2); }
+.census-grid article p { font-size: 16px; }
+.census-figure img { width: 100%; height: auto; display: block; }
+.census-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 14px; }
+/* A worked example: one chosen wording pattern travels from phrase to count to comparison. */
+.guide { border-top: 1px solid var(--ink); }
+.guide-shell { display: grid; grid-template-columns: minmax(235px, .75fr) minmax(0, 1.55fr); gap: 18px; align-items: stretch; }
+.guide-picks { display: grid; gap: 9px; align-content: start; }
+.guide-picks button { text-align: left; padding: 16px 18px; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); color: var(--ink); cursor: pointer; display: grid; gap: 5px; }
+.guide-picks button:hover { border-color: var(--post); }
+.guide-picks button[aria-selected="true"] { border: 2px solid var(--post); padding: 15px 17px; background: var(--post-soft); }
+.guide-picks .step { font-family: var(--f-mono); font-size: 12px; color: var(--post); }
+.guide-picks strong { font-family: var(--f-ui); font-size: 16px; font-weight: 600; }
+.guide-picks .hint { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+.guide-figure { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: clamp(20px, 3vw, 34px); display: grid; gap: 18px; align-content: start; }
+.guide-figure h3 { font-size: clamp(25px, 3vw, 34px); }
+.guide-example { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.45; }
+.guide-bars { display: grid; gap: 14px; padding-block: 10px 2px; }
+.guide-row { display: grid; grid-template-columns: 64px minmax(0, 1fr) 70px; align-items: center; gap: 12px; font: 14px var(--f-ui); }
+.guide-row .track { height: 20px; border-radius: 4px; background: var(--paper); overflow: hidden; }
+.guide-row .fill { height: 100%; border-radius: 4px; transition: width .32s ease; }
+.guide-row .value { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.guide-result { border-top: 1px solid var(--rule); padding-top: 16px; display: grid; gap: 6px; }
+.guide-result b { font-family: var(--f-display); font-weight: 500; font-size: clamp(27px, 3.4vw, 40px); line-height: 1.15; }
+.guide-result span { font: 14px/1.5 var(--f-ui); color: var(--ink-2); }
+.guide-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.guide-steps div { padding: 14px 16px 16px 0; display: grid; gap: 5px; }
+.guide-steps b { font: 600 13px var(--f-ui); }
+.guide-steps span { font: 13px/1.5 var(--f-ui); color: var(--ink-2); }
+@media (max-width: 760px) { .guide-shell { grid-template-columns: 1fr; } .guide-picks { grid-template-columns: repeat(3, minmax(0, 1fr)); } .guide-picks button { padding: 12px; } .guide-picks button[aria-selected="true"] { padding: 11px; } .guide-picks .hint { display: none; } }
+@media (max-width: 540px) { .guide-picks { grid-template-columns: 1fr; } .guide-picks button { gap: 2px; } .guide-picks .hint { display: block; } .guide-steps { grid-template-columns: 1fr; } .guide-steps div { border-bottom: 1px solid var(--rule); } .guide-steps div:last-child { border-bottom: 0; } }
+.measure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.measure-grid article { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.measure-grid h3 { font-size: 19px; }
+.measure-grid p { font-size: 16px; }
+.measure-grid .example { color: var(--ink-2); font-family: var(--f-ui); font-size: 13px; }
+
+/* figures */
+figure { margin: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 18px 14px; display: grid; gap: 12px; min-width: 0; }
+figcaption { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+select { font-family: var(--f-ui); font-size: 14px; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); max-width: 100%; }
+svg text { font-family: var(--f-ui); fill: var(--ink-2); font-size: 12px; }
+svg .axis { stroke: var(--rule); }
+.chart { width: 100%; height: auto; display: block; }
+.chart-scroll { overflow-x: auto; min-width: 0; max-width: 100%; }
+section > *, figure > *, header > *, .gcard > *, details > * { min-width: 0; }
+@media (max-width: 640px) { .chart-scroll .chart { min-width: 680px; } }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 18px; height: 3px; vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+.legend i.dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* shifts */
+.shifts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.shift { padding: 20px 20px 22px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 10px; align-content: start; min-width: 0; }
+.shift .stat { font-family: var(--f-mono); font-size: 13px; color: var(--post); }
+.shift p { font-size: 17px; }
+.pair { display: grid; gap: 6px; font-size: 15.5px; line-height: 1.45; }
+.pair div { padding-left: 10px; border-left: 2px solid var(--rule); }
+.pair .a { border-color: var(--pre); }
+.pair .b { border-color: var(--post); }
+.pair small { font-family: var(--f-ui); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); display: block; }
+
+/* words */
+.words { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.wlist { display: grid; gap: 6px; }
+.wrow { display: grid; grid-template-columns: minmax(0, 11em) 1fr 4.4em; gap: 10px; align-items: center; font-size: 15px; }
+.wrow .t { font-family: var(--f-mono); font-size: 13.5px; overflow-wrap: anywhere; }
+.wrow .bars { position: relative; height: 14px; }
+.wrow .bars span { position: absolute; left: 0; height: 6px; border-radius: 3px; }
+.wrow .bars .b0 { top: 0; background: var(--pre); }
+.wrow .bars .b1 { top: 8px; background: var(--post); }
+.wrow .n { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); text-align: right; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-family: var(--f-mono); font-size: 12.5px; border: 1px solid var(--rule); border-radius: 999px; padding: 3px 9px; color: var(--ink-2); background: var(--sheet); }
+
+/* venues */
+.vtabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.vtabs button { font-family: var(--f-ui); font-size: 14px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+.vtabs button[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 -3px 0 var(--post); }
+.vhead { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+.vhead div { display: grid; gap: 2px; }
+.vhead b { font-family: var(--f-display); font-size: 34px; font-weight: 500; line-height: 1.05; }
+.vhead span { font-family: var(--f-ui); font-size: 12.5px; color: var(--ink-2); }
+.tbl { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-family: var(--f-ui); font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 7px 8px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; white-space: normal; }
+th { font-weight: 600; color: var(--ink-2); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.aucbar { display: inline-block; width: 90px; height: 8px; background: var(--rule); border-radius: 4px; position: relative; vertical-align: middle; }
+.aucbar span { position: absolute; top: 0; height: 8px; border-radius: 4px; }
+.aucbar:after { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 14px; background: var(--ink-3); }
+
+/* quiz */
+.quiz { display: grid; gap: 14px; }
+.qcard { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 22px; display: grid; gap: 16px; }
+.qcard blockquote { margin: 0; font-size: 22px; line-height: 1.5; }
+.qbtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.qbtns .btn.pre { background: var(--pre); border-color: var(--pre); color: #fff; }
+.qbtns .btn.post { background: var(--post); border-color: var(--post); color: #1b1200; }
+.qres { font-family: var(--f-ui); font-size: 15px; display: grid; gap: 6px; }
+.ok { color: var(--good); font-weight: 600; } .no { color: var(--bad); font-weight: 600; }
+.progress { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+/* stats */
+.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; }
+.statgrid figure h3 { font-size: 19px; }
+.statgrid th, .statgrid td { white-space: normal; padding: 6px 6px; font-size: 13px; }
+.statgrid th { font-size: 11px; }
+.statgrid td:first-child { min-width: 7em; }
+.big { font-family: var(--f-display); font-size: 44px; line-height: 1; font-weight: 500; }
+ul.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.unchanged { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.unchanged div { padding: 12px 14px 14px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 3px; }
+.unchanged b { font-family: var(--f-ui); font-weight: 600; font-size: 14px; }
+.unchanged span { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+footer { padding-block: 64px 80px; border-top: 1px solid var(--rule); margin-top: 60px; display: grid; gap: 12px; }
+@media (max-width: 560px) {
+  body { font-size: 17.5px; }
+  .rewrite { padding: 16px; }
+  .fact b { font-size: 32px; }
+  .wrow { grid-template-columns: minmax(0, 8.5em) 1fr 3.8em; }
+}
+
+/* game */
+.game { padding-block: 40px 8px; display: grid; gap: 18px; }
+.game .game-h { font-size: clamp(36px, 6vw, 68px); font-weight: 400; letter-spacing: -0.02em; }
+.game .gsub { font-size: clamp(18px, 2vw, 21px); color: var(--ink-2); max-width: 52ch; }
+.quicklinks { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--f-ui); font-size: 14px; }
+.gcard { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: clamp(18px, 3vw, 32px); display: grid; gap: 20px; }
+.gtop { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+.pips { display: flex; gap: 5px; flex-wrap: wrap; }
+.pips i { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--rule); display: inline-block; }
+.pips i.on { border-color: var(--ink-2); }
+.pips i.r { background: var(--good); border-color: var(--good); }
+.pips i.w { background: var(--bad); border-color: var(--bad); }
+.gpara { font-size: clamp(18px, 2.1vw, 22px); line-height: 1.6; margin: 0; max-width: 70ch; }
+.gbtns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gbtns button { font-family: var(--f-ui); cursor: pointer; border-radius: 8px; padding: 14px 16px; text-align: left; display: grid; gap: 2px; border: 2px solid; background: transparent; color: var(--ink); }
+.gbtns button b { font-size: 18px; font-weight: 600; }
+.gbtns button span { font-size: 13px; color: var(--ink-2); }
+.gbtns .gpre { border-color: var(--pre); } .gbtns .gpre:hover { background: var(--pre-soft); }
+.gbtns .gpost { border-color: var(--post); } .gbtns .gpost:hover { background: var(--post-soft); }
+.greveal { font-family: var(--f-ui); font-size: 15px; display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 16px; }
+.greveal .src { color: var(--ink-2); font-size: 13.5px; }
+.gend { display: grid; gap: 10px; }
+.gend .big { font-size: 64px; }
+@media (max-width: 480px) { .gbtns { grid-template-columns: 1fr; } }
+
+/* corpus panel */
+.corpus { display: grid; gap: 18px; }
+.cbig { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.cbig div { padding: 14px 14px 16px 0; display: grid; gap: 4px; }
+.cbig b { font-family: var(--f-display); font-size: clamp(40px, 5.4vw, 64px); font-weight: 500; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.cbig span { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+table.cmat td, table.cmat th { text-align: center; padding: 6px 6px; }
+table.cmat td:first-child, table.cmat th:first-child { text-align: left; }
+table.cmat td.c { font-family: var(--f-mono); font-size: 13px; border-radius: 4px; }
+table.cmat td.e2016 { background: color-mix(in srgb, var(--pre) 10%, transparent); }
+table.cmat td.epre { background: color-mix(in srgb, var(--pre) 22%, transparent); }
+table.cmat td.eser { background: color-mix(in srgb, var(--ink-3) 16%, transparent); }
+table.cmat td.epost { background: color-mix(in srgb, var(--post) 26%, transparent); }
+table.cmat tfoot td { font-weight: 600; border-top: 1px solid var(--ink); }
+/* glossary */
+.gloss { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 28px; }
+.gloss div { padding: 12px 0 14px; border-bottom: 1px solid var(--rule); display: grid; gap: 4px; scroll-margin-top: 70px; }
+.gloss dt { font-family: var(--f-ui); font-weight: 600; font-size: 15px; }
+.gloss dd { margin: 0; font-size: 16px; color: var(--ink-2); line-height: 1.5; }
+.gloss div:target { background: var(--post-soft); }
+.gterm { color: inherit; text-decoration: underline dotted; text-decoration-color: var(--ink-3); text-underline-offset: 3px; }
+.plain { font-family: var(--f-ui); font-size: 13.5px; background: var(--paper); border-radius: 6px; padding: 10px 12px; color: var(--ink); line-height: 1.5; }
+.plain b { font-weight: 600; }
+.tldr { border-left: 3px solid var(--post); padding: 4px 0 4px 16px; display: grid; gap: 6px; max-width: 70ch; }
+.tldr ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: 18px; }
+details.more, details.fold { border-top: 1px solid var(--rule); padding-block: 14px; }
+details.fold { margin-block: 0; }
+details > summary { cursor: pointer; font-family: var(--f-ui); font-weight: 600; font-size: 16px; list-style-position: outside; }
+details.fold[open] > summary { margin-bottom: 18px; }
+details.more > .statgrid { margin-top: 18px; }
+
+/* detector */
+.det-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.det-facts div { padding: 14px 14px 16px 0; display: grid; gap: 4px; }
+.det-facts b { font-family: var(--f-display); font-size: clamp(36px, 4.6vw, 52px); font-weight: 500; line-height: 1; }
+.det-facts span { font-family: var(--f-ui); font-size: 13px; color: var(--ink-2); }
+.det-ctrl { display: grid; gap: 8px; font-family: var(--f-ui); }
+.det-ctrl input[type=range] { width: 100%; accent-color: var(--post); }
+.det-read { font-size: 19px; }
+.gbars { display: grid; gap: 8px; font-family: var(--f-ui); font-size: 14px; }
+.gbar { display: grid; grid-template-columns: minmax(0, 15em) 1fr 3.5em; gap: 10px; align-items: center; }
+.gbar .track { height: 14px; background: var(--rule); border-radius: 3px; position: relative; overflow: hidden; }
+.gbar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; transition: width .25s; }
+.gbar .val { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) { .gbar { grid-template-columns: minmax(0, 9em) 1fr 3em; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+main.col section { padding-block: 46px 8px; gap: 20px; } main.col figure {margin: 4px 0;} main.col img {width:100%; height:auto;} main.col .census-grid {grid-template-columns:repeat(auto-fit,minmax(210px,1fr));} .table-scroll {overflow-x:auto;} table {width:100%; border-collapse:collapse; font:14px/1.6 var(--f-ui);} caption {text-align:left; margin-bottom:12px; font-weight:600;} th,td {padding:12px 8px; border-bottom:1px solid var(--rule);text-align:left;} th {font-weight:500;} header.hero {padding-top:48px;} .hero .hero-h {font-size:clamp(40px,6.5vw,66px);} figcaption {font:13px/1.55 var(--f-ui);color:var(--ink-2);margin-top:10px;}</style></head><body><nav class="top"><div class="in"><a class="brand" href="index.html">Notably, everything changed.</a><a href="#trend">The trend</a><a href="#authors">The same authors</a><a href="#retreat">2026</a><a href="#next">What comes next</a><a href="#evidence">Evidence</a></div></nav>
+<header class="hero col"><div class="eyebrow">Research update · October 24, 2026</div><h1 class="hero-h">What changed when we checked <em>the whole record?</em></h1><p class="sub">We counted the same three patterns in 21,306 NLP papers. All three rose above their earlier trend, and in ACL 2026 one opener pattern fell.</p><p class="ui small">About 6 minutes · <a href="index.html#census">See all census figures</a></p></header>
+<main class="col">
+<section id="record"><h2>From a sample to a census</h2><p>Our first study examined 9,472 computer-science papers and found three writing patterns that became more common around 2024. We then tested those patterns across the available main-conference record of ACL, EMNLP and NAACL, with the tests and thresholds recorded before extracting the census text.</p>
+<div class="census-grid"><article><b>21,368</b><p>Papers in the frame: ACL 2016–26, EMNLP 2016–25 and the NAACL years held in that period.</p></article><article><b>21,306</b><p>Papers analysed after the 1,500-body-word rule; 62 fell below it.</p></article></div>
+<p>The census overlaps the original sample: 1,413 papers are shared. These are overlapping views of the record, so their counts must not be added. The excess remains when the known overlaps are removed, including a further sensitivity excluding 460 papers without a usable abstract for the overlap check.</p></section>
+<section id="trend"><h2>The increase exceeds the earlier trend</h2><p>We count functional <i>-ing</i> additions (“…, enabling faster training”), interpretive additions (“…, highlighting the importance of…”), and sentences starting with <i>Additionally</i> or <i>Notably</i>. Between 2022 and 2025, their rates rose roughly three- to fifteenfold, depending on venue and pattern.</p><p>A simple before/after comparison could mistake older drift for a new change. We instead extend each venue’s 2016–22 trend and compare it with 2024–25. The excesses below are <strong>equal-venue averages for ACL and EMNLP</strong>.</p>
+<div class="table-scroll"><table><caption>Extra matches per 1,000 body words, 2024–25 above forecast</caption><thead><tr><th scope="col">Pattern</th><th scope="col">Excess</th><th scope="col">95% interval</th></tr></thead><tbody><tr><th scope="row">Functional additions</th><td>+1.06</td><td>1.00 to 1.13</td></tr><tr><th scope="row">Interpretive additions</th><td>+0.25</td><td>0.24 to 0.27</td></tr><tr><th scope="row">Additionally / Notably</th><td>+0.41</td><td>0.37 to 0.45</td></tr></tbody></table></div>
+<h3>Before/after and above-trend are different comparisons</h3><p>If a pattern was already rising, a simple before/after difference includes that earlier drift. Extending the 2016–22 line asks how much of the later increase lies above that forecast. Both columns below average ACL and EMNLP equally.</p><div class="table-scroll"><table><caption>Matches per 1,000 body words</caption><thead><tr><th scope="col">Pattern</th><th scope="col">2024–25 minus 2019–20</th><th scope="col">Above the earlier trend</th></tr></thead><tbody><tr><th scope="row">Functional additions</th><td>+1.14</td><td>+1.06</td></tr><tr><th scope="row">Interpretive additions</th><td>+0.26</td><td>+0.25</td></tr><tr><th scope="row">Additionally / Notably</th><td>+0.47</td><td>+0.41</td></tr></tbody></table></div><p>The adjustment makes these estimates smaller, by at most about 0.08 per 1,000 words. Most of the before/after difference remains above this fitted trend. This depends on the stated trend model; it does not identify a cause.</p><p>NAACL is not held annually, so it has a separate fit. It also sits above its earlier trend: +0.72, +0.19 and +0.36 for the three patterns.</p><figure class="census-figure"><img src="assets/round4/acl_series.png" alt="Annual rates of three patterns by venue, rising above earlier trends after 2022." width="1800" loading="lazy"><figcaption>Rates per 1,000 body words. Dashed lines extend ACL’s and EMNLP’s 2016–22 trends. NAACL’s fit is reported separately; only ACL has 2026 papers here.</figcaption></figure>
+<p>Pretending the break happened earlier gives placebo excesses no larger than 0.05 per 1,000 words. Papers that our topic filter marks as not about language models still show increases, as do checks that remove Limitations sections or fit the trend only through 2021. These checks constrain simple explanations based on earlier drift or changing topics; they cannot exclude every alternative.</p></section>
+<section id="authors"><h2>Papers by the same first authors changed</h2><p>The conferences grew rapidly. Could the change simply reflect new people publishing? We followed 762 first authors who had papers in both 2020–22 and 2024–26. For these authors, the rise in their first-author papers was 58%, 67% and 72% of the rise across all papers, for the three patterns in the order above.</p><figure class="census-figure"><img src="assets/round4/acl_panel.png" alt="Within-author increases for the three patterns, alongside a smaller pre-LLM comparison." loading="lazy"><figcaption>The ratios compare point estimates. Error bars scale within-author 95% intervals by a fixed all-paper point estimate; they do not include uncertainty in that denominator. The earlier panel follows 554 repeat first authors.</figcaption></figure><p>In the comparable pre-LLM comparison, 2016–18 to 2020–22, the three changes were at most 0.03 per 1,000 words. Holding first-author identity fixed therefore leaves much of the change visible. It does not establish who drafted or edited a paper, or measure how much change any particular person caused.</p></section>
+<section id="retreat"><h2>In 2026, one wording pattern fell</h2><p>Before extracting ACL 2026 text, we registered a prediction that the combined <i>Additionally/Notably</i> rate would fall. It declined from 0.713 to 0.375 per 1,000 words, about 47%. The difference was −0.338, with a 95% interval from −0.369 to −0.306.</p><figure class="census-figure"><img src="assets/round4/acl_openers.png" alt="Additionally falls sharply in ACL 2026, while Notably remains elevated and Crucially rises." loading="lazy"><figcaption>The combined-opener test was registered before extraction. Its breakdown into individual words is exploratory.</figcaption></figure><p>Almost all the combined decline came from <i>Additionally</i>; <i>Notably</i> held steady. Meanwhile, functional additions rose by another 0.233 per 1,000 words (95% interval 0.156 to 0.309). The patterns do not all move together. This does not tell us whether authors changed their habits, editing tools changed, or writing norms shifted.</p></section>
+<section id="checks"><h2>What the checks can establish</h2><p>A dependency parser classified 97–98% of the targeted <i>-ing</i> matches as attached clauses in both 2019–20 and 2024–25. Under a stricter definition restricted to adverbial clauses, the shares are 87–91%. Both definitions meet the equivalence rule set in advance; the interpretive-pattern check in 2019–20 uses only 190 matches. This is a parser diagnostic, not human validation of every match’s meaning.</p><p>Separate checks also find the three patterns rising in 1,192 analysed CVPR, ICML and NeurIPS papers (a 2025-minus-2020 comparison), 3,254 analysed USENIX papers out of a 3,258-paper frame (compared with trend), and 12,215 arXiv first versions out of 12,600 selected (also compared with trend). The arXiv sample excluded 376 papers below the word gate and did not retrieve nine. These comparisons use different groups of papers and different comparisons.</p><p>Two checks were weaker. In same-paper arXiv revisions, papers revised across late 2022 gained more functional additions and openers than papers revised across late 2020, but the paragraphs shared by both versions showed no clear difference. The data do not show authors rewriting existing text. A small biology sample did not meet the three-pattern rule.</p><p>The census primary estimates were independently recomputed from frozen numeric rows. In a separate review of secondary checks, seven interval endpoints differed enough to fail the original checking tolerance. Repeating the analysis with different random seeds gives results consistent with resampling noise, but does not establish exact agreement. The headline estimates do not change.</p></section>
+<section id="next"><div class="eyebrow">Study in progress</div><h2>Next: outside computer science</h2><p>We are preparing a test on arXiv mathematics, physics and quantitative biology. Metadata collection and statistical calibration precede the selection freeze and paper-text analysis. No outside-CS finding is available yet.</p><p>We will post results once they have been analysed and independently checked, reporting selected counts and analysed counts separately. Until results exist and have been checked, this section makes no claim about whether those fields changed.</p></section>
+<section id="meaning"><h2>A change in published prose, with its cause still open</h2><p>The evidence supports a substantial change in these measured patterns, across venues, topic checks and repeat authors’ papers. It does not establish that AI caused it, estimate AI use in any individual paper, or justify judging an author from a phrase. Editing tools, imitation, changing topics and changing norms remain possible contributors.</p></section>
+<section id="faq"><h2>Questions readers ask</h2><details class="more"><summary>Does finding one of these phrases identify AI use?</summary><p>No. These are aggregate counts of wording patterns. A match in an individual paper does not establish how it was written and should not be used to accuse an author.</p></details><details class="more"><summary>Could new authors explain the difference?</summary><p>Changing authorship could contribute, but the first-author panel shows a change even when first-author identity is held fixed. It does not identify how much of the overall change was caused by a different mix of authors.</p></details><details class="more"><summary>What does the parser check add?</summary><p>It checks whether pattern matches are classified as attached clauses at similar rates in the two eras. It does not replace people checking whether each clause has the intended meaning.</p></details><details class="more"><summary>Can I reproduce the numbers?</summary><p>The aggregate evidence file below contains exact estimates, intervals and provenance hashes. The full census reproduction package is being prepared; the currently linked paper downloads describe the earlier discovery study.</p></details></section><section id="evidence"><h2>Read the evidence</h2><p><a href="assets/round4/census-evidence.json">Download the aggregate estimates, intervals, cohort definitions and source-file hash</a>. The JSON preserves result-key names for the census trend, author panel, parser diagnostic and 2026 comparison.</p><p><a href="index.html#downloads">The original paper and reproduction downloads</a> describe the earlier discovery study; they are labelled separately from this census update. The census manuscript and expanded reproduction package are being prepared.</p></section></main>
+<footer class="col"><p><a href="index.html">← Return to the interactive study</a></p><p class="small muted">Updated October 24, 2026. Observational results describe groups of published papers, not individual AI use.</p></footer></body></html>
