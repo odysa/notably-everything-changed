@@ -49,3 +49,16 @@ and source hashes; no source paper prose or private paths are included.
 Data and local-link checks passed. The browser access host was unavailable,
 so this revision has no new desktop/mobile screenshot verification. The page
 uses responsive CSS and includes readable table equivalents for both charts.
+
+## One combined blog (November 7)
+
+The full original study, conference census and naming audit now live in
+`index.html`, with one section menu. The earlier abbreviated census section
+was replaced by the complete census chapter, rather than duplicated.
+`census-update.html` and `naming-update.html` forward old links to the relevant
+chapter, including known deep links, and offer a plain link without JavaScript.
+Native naming SVGs, evidence tables and downloads remain available in place.
+
+Merge checks verify one H1, unique IDs, local links, unchanged original
+interactive scripts, JavaScript syntax, key values and caveats. Browser control
+remains unavailable, so no new visual rendering pass is claimed.
