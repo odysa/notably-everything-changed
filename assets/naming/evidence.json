@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-07",
+  "scope": "Author-proposed method/framework/system/model/tool names in titles and abstracts; AI audit reference, not human gold",
+  "frame": {
+    "pre": 1015,
+    "post": 4683,
+    "sample": 100,
+    "years": [
+      2019,
+      2020,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "primary": {
+    "pre": {
+      "E1_names_in_title_abstract": {
+        "lower": {
+          "est": 0.2695,
+          "se": 0.0478,
+          "ci95_approx": [
+            0.1758,
+            0.3631
+          ]
+        },
+        "upper": {
+          "est": 0.3063,
+          "se": 0.06,
+          "ci95_approx": [
+            0.1886,
+            0.4239
+          ]
+        },
+        "n_unknown_papers": 1
+      },
+      "E2b_name_recall_lo": {
+        "est": 0.606,
+        "se": 0.1037,
+        "ci95_approx": [
+          0.4028,
+          0.8093
+        ],
+        "papers_in_denominator": 15
+      },
+      "E2b_name_recall_unknowns_counted_true": {
+        "est": 0.5332,
+        "se": 0.1101,
+        "ci95_approx": [
+          0.3174,
+          0.749
+        ],
+        "papers_in_denominator": 16
+      },
+      "E2c_paper_detection": {
+        "est": 0.606,
+        "se": 0.1037,
+        "ci95_approx": [
+          0.4028,
+          0.8093
+        ],
+        "papers_in_denominator": 15
+      }
+    },
+    "post": {
+      "E1_names_in_title_abstract": {
+        "lower": {
+          "est": 0.5709,
+          "se": 0.0632,
+          "ci95_approx": [
+            0.4471,
+            0.6948
+          ]
+        },
+        "upper": {
+          "est": 0.6168,
+          "se": 0.0625,
+          "ci95_approx": [
+            0.4942,
+            0.7393
+          ]
+        },
+        "n_unknown_papers": 3
+      },
+      "E2b_name_recall_lo": {
+        "est": 0.8088,
+        "se": 0.0564,
+        "ci95_approx": [
+          0.6983,
+          0.9194
+        ],
+        "papers_in_denominator": 27
+      },
+      "E2b_name_recall_unknowns_counted_true": {
+        "est": 0.7905,
+        "se": 0.056,
+        "ci95_approx": [
+          0.6808,
+          0.9002
+        ],
+        "papers_in_denominator": 30
+      },
+      "E2c_paper_detection": {
+        "est": 0.8088,
+        "se": 0.0564,
+        "ci95_approx": [
+          0.6983,
+          0.9194
+        ],
+        "papers_in_denominator": 27
+      }
+    },
+    "diff_post_minus_pre": {
+      "E1_diff_bound_lower": {
+        "est": 0.2647,
+        "se": 0.0872,
+        "ci95_approx": [
+          0.0938,
+          0.4355
+        ]
+      },
+      "E1_diff_bound_upper": {
+        "est": 0.3473,
+        "se": 0.0787,
+        "ci95_approx": [
+          0.193,
+          0.5015
+        ]
+      },
+      "E1_scenario_unknowns_all_0": {
+        "est": 0.3015,
+        "se": 0.0792,
+        "ci95_approx": [
+          0.1462,
+          0.4568
+        ]
+      },
+      "E1_scenario_unknowns_all_1": {
+        "est": 0.3105,
+        "se": 0.0867,
+        "ci95_approx": [
+          0.1406,
+          0.4804
+        ]
+      },
+      "E2b_recall": {
+        "est": 0.2028,
+        "se": 0.118,
+        "ci95_approx": [
+          -0.0285,
+          0.4341
+        ]
+      },
+      "E2c_detection": {
+        "est": 0.2028,
+        "se": 0.118,
+        "ci95_approx": [
+          -0.0285,
+          0.4341
+        ]
+      }
+    }
+  },
+  "sources": {
+    "PRELIM_TABLE.json": "ab7a1edb62edd84d74c61d88be923e6af026a428249d693090be40eaae59dca9",
+    "SUMMARY.md": "b9bfe975bad702d8b96960bb38aac4cc8a09116eaedea2b9b8c768c9351f3a8a",
+    "DESIGN.md": "a64d017200c5f3862fe2d0ee2cba55c0669e2acb495d2e34854857e1ead883ba",
+    "JOIN_SPEC.md": "27b6ad36628c50bc61e52c726fd1ed2090702fceb96b54e846cf480d948fbcdf"
+  },
+  "uncertainty": "Unknown-attribution ranges are not confidence intervals. Difference endpoint intervals are approximate design-based 95% intervals; they do not cover semantic judgment error."
+}

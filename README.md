@@ -37,3 +37,15 @@ comparison tolerance. The source PDFs/prose are omitted; parser and figure
 code are reference-only. The original-study downloads remain separately
 labelled. The file-level checksums use standard SHA-256 format in
 `downloads/census-contents.sha256`.
+
+## November 7 naming update
+
+`naming-update.html` reports the separate 100-paper title/abstract audit,
+weighted to 5,698 ACL main-conference long papers. Two native inline SVG
+charts and HTML tables distinguish unknown-attribution ranges from approximate
+sampling intervals. `assets/naming/evidence.json` contains aggregate estimates
+and source hashes; no source paper prose or private paths are included.
+
+Data and local-link checks passed. The browser access host was unavailable,
+so this revision has no new desktop/mobile screenshot verification. The page
+uses responsive CSS and includes readable table equivalents for both charts.
