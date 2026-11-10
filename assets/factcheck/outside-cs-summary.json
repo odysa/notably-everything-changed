@@ -1,0 +1,45 @@
+{
+  "scope": "Nine prespecified sampled arXiv categories; conditional model-based follow-up, not all science",
+  "selected": 23603,
+  "admitted": 21456,
+  "below_word_gate": 2120,
+  "not_retrieved": 27,
+  "primary_source_commit": "aa02e17",
+  "primary_results_sha256": "9a57366e43412fefaa34428ddfa892560075bdd936c34aaf9118c7834d2edea3",
+  "unit": "Excess regex matches per 1000 extracted body words",
+  "estimates": {
+    "math": [
+      0.08240433235937926,
+      0.004966638402746732,
+      0.01884926958647301
+    ],
+    "physics": [
+      0.2441762479746926,
+      0.052118363568778144,
+      0.09909863535806729
+    ],
+    "q_bio": [
+      0.6639115572524082,
+      0.16692491038261234,
+      0.12938984761011582
+    ]
+  },
+  "order": [
+    "functional_ing",
+    "interpretive_core_ing",
+    "additionally_notably"
+  ],
+  "positivity": {
+    "math": "mixed",
+    "physics": "replicates_under_specified_rule",
+    "q_bio": "replicates_under_specified_rule"
+  },
+  "limits": [
+    "Math parser diagnostic unresolved",
+    "Publication-metadata restriction: 180 short physics cells and 2 short q-bio cells; no decisions for these fields",
+    "q-bio interpretive placebo estimate -0.015573, approximate interval [-0.027744,-0.001817]",
+    "Fitted temporal parameters reach grid boundaries; actual-process calibration not established",
+    "Primary specification independently compared; secondary computations inspected but not independently reproduced",
+    "Overlap check found 2 matches; 5893 records lack usable abstracts; not a unique-project total"
+  ]
+}

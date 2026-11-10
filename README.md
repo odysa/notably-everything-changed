@@ -62,3 +62,21 @@ Native naming SVGs, evidence tables and downloads remain available in place.
 Merge checks verify one H1, unique IDs, local links, unchanged original
 interactive scripts, JavaScript syntax, key values and caveats. Browser control
 remains unavailable, so no new visual rendering pass is claimed.
+
+## November 10 fact check and enrichment
+
+The homepage now leads with the approximate combined scale of the two main
+writing datasets and uses scope-based dataset labels. The 1,413 recorded
+abstract matches are against the discovery download list, not necessarily its
+9,472 analysed papers: the previous direct-subtraction interpretation is
+withdrawn, and no exact unique total is claimed. The evidence JSON field name
+has been corrected accordingly; underlying numerical study outputs are intact.
+
+Added a study/question map, official-abstract naming examples, raw name-pattern
+counts with denominators, and a narrowly qualified account of the completed
+outside-CS follow-up. The new aggregate JSON files are under assets/factcheck/.
+Naming shares use approximate whole percentages, avoiding double rounding of
+the frozen four-decimal table. Main-contribution filtering, sampling uncertainty,
+placebo scope and nonrandom missingness are explicit. External source links were
+checked; historical data arrays remain unchanged. Browser control is still
+unavailable, so no new desktop/mobile screenshot verification is claimed.

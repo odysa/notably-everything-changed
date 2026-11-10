@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "scope": "Author-proposed method/framework/system/model/tool names in titles and abstracts; AI audit reference, not human gold",
+  "scope": "Author-proposed MAIN method/framework/system/model/tool names in titles and abstracts; components and variants excluded; AI audit reference, not human gold",
   "frame": {
     "pre": 1015,
     "post": 4683,
@@ -167,5 +167,6 @@
     "DESIGN.md": "a64d017200c5f3862fe2d0ee2cba55c0669e2acb495d2e34854857e1ead883ba",
     "JOIN_SPEC.md": "27b6ad36628c50bc61e52c726fd1ed2090702fceb96b54e846cf480d948fbcdf"
   },
-  "uncertainty": "Unknown-attribution ranges are not confidence intervals. Difference endpoint intervals are approximate design-based 95% intervals; they do not cover semantic judgment error."
+  "uncertainty": "Unknown-attribution ranges are not confidence intervals. Difference endpoint intervals are approximate design-based 95% intervals; they do not cover semantic judgment error.",
+  "display_note": "Computed differences and intervals use unrounded values. Frozen primary table is rounded to four decimals; period shares displayed as approximate whole percentages. Pre lower unrounded audit estimate is 0.26945812807881775 (26.9% at one percentage decimal)."
 }

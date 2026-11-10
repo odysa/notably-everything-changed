@@ -11,11 +11,12 @@
     "frame": 21368,
     "analysed": 21306,
     "below_1500_body_words": 62,
-    "ACL": "2016–2026",
-    "EMNLP": "2016–2025",
-    "NAACL": "held years in 2016–2026",
-    "overlap_with_discovery_sample": 1413,
-    "not_added_to_discovery_sample": true
+    "ACL": "2016\u20132026",
+    "EMNLP": "2016\u20132025",
+    "NAACL": "held years in 2016\u20132026",
+    "not_added_to_discovery_sample": true,
+    "overlap_matches_against_discovery_download_list": 1413,
+    "analysed_sample_overlap": "Not established exactly: matching used the download list, which includes papers excluded from the 9472 analysed sample."
   },
   "H1_equal_venue_ACL_EMNLP_2024_2025_excess_over_2016_2022_trend": {
     "addnot_1k": {
@@ -75,7 +76,7 @@
       "ing_func_1k": 0.5751486818672545,
       "ing_interp_core_1k": 0.6740227753903394
     },
-    "windows": "2020–2022 versus 2024–2026",
+    "windows": "2020\u20132022 versus 2024\u20132026",
     "pre_period_placebo": {
       "change": {
         "addnot_1k": {

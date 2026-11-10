@@ -1,0 +1,101 @@
+{
+  "source_sha256": "68c74b1185f754b8496cc4065142feec997f14be05ce82fbb01bd2bd620bc6bd",
+  "definition": "strong = candidate from the title ('NAME: ...'), the abstract, or >=2 distinct body sentences; rule-based, not a census",
+  "denominators": {
+    "pre": 1015,
+    "post": 4683
+  },
+  "patterns": {
+    "\u2026Bench / Bench\u2026": {
+      "pre": 0.001,
+      "post": 0.0506,
+      "papers_pre": 1,
+      "papers_post": 237
+    },
+    "\u2026GPT": {
+      "pre": 0.0,
+      "post": 0.0026,
+      "papers_pre": 0,
+      "papers_post": 12
+    },
+    "contains LLM": {
+      "pre": 0.0,
+      "post": 0.0079,
+      "papers_pre": 0,
+      "papers_post": 37
+    },
+    "\u2026Agent / Agent\u2026": {
+      "pre": 0.0,
+      "post": 0.0147,
+      "papers_pre": 0,
+      "papers_post": 69
+    },
+    "\u2026RAG": {
+      "pre": 0.0,
+      "post": 0.0141,
+      "papers_pre": 0,
+      "papers_post": 66
+    },
+    "\u2026R1": {
+      "pre": 0.0,
+      "post": 0.0026,
+      "papers_pre": 0,
+      "papers_post": 12
+    },
+    "\u2026Guard": {
+      "pre": 0.0,
+      "post": 0.0036,
+      "papers_pre": 0,
+      "papers_post": 17
+    },
+    "\u2026QA": {
+      "pre": 0.0128,
+      "post": 0.0147,
+      "papers_pre": 13,
+      "papers_post": 69
+    },
+    "\u2026Eval": {
+      "pre": 0.0,
+      "post": 0.0158,
+      "papers_pre": 0,
+      "papers_post": 74
+    },
+    "\u2026Coder / Code\u2026": {
+      "pre": 0.001,
+      "post": 0.0128,
+      "papers_pre": 1,
+      "papers_post": 60
+    },
+    "\u2026Mind / \u2026Think": {
+      "pre": 0.001,
+      "post": 0.0038,
+      "papers_pre": 1,
+      "papers_post": 18
+    },
+    "\u2026Net / \u2026Network": {
+      "pre": 0.0079,
+      "post": 0.0017,
+      "papers_pre": 8,
+      "papers_post": 8
+    },
+    "BERT-based (\u2026BERT)": {
+      "pre": 0.0138,
+      "post": 0.0013,
+      "papers_pre": 14,
+      "papers_post": 6
+    },
+    "\u2026Seq / Seq2\u2026": {
+      "pre": 0.002,
+      "post": 0.0009,
+      "papers_pre": 2,
+      "papers_post": 4
+    },
+    "\u2026GNN / \u2026GCN / \u2026Graph": {
+      "pre": 0.0099,
+      "post": 0.0041,
+      "papers_pre": 10,
+      "papers_post": 19
+    }
+  },
+  "scope": "Raw strong candidate paper counts including body text; not audited title/abstract rates"
+}
